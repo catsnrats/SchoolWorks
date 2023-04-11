@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,13 +26,18 @@ namespace Elaimet
         static void Main(string[] args)
         {
             //Tässä luot luokasta olion
-
+            Hevonen cHevonen = new Hevonen();
+            cHevonen.nimi = "Histamiini";
+            cHevonen.paino = 89;
             //Tulosta olion nimi ja paino
-
+            Console.WriteLine(cHevonen.nimi + " " + cHevonen.paino + " kg");
             //Muuta olion nimeä ja painoa
-
+            cHevonen.nimi = "Vitamiini";
+            cHevonen.paino = 450;
             //Tulosta nyt olion nimi ja paino, jotta varmistat että muutos tapahtui
-    
+            Console.WriteLine(cHevonen.nimi + " " + cHevonen.paino + " kg");
+            Console.Read();
+
         }
     }
 }

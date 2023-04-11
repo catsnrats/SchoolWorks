@@ -9,8 +9,8 @@ namespace Elaimet
     //omaan tiedostoonsa
     class Hevonen
     {
-        private string nimi;
-        private int paino;
+        public string nimi;
+        public int paino;
         //Alla konstruktori jossa ei ole parametreja, joten kaikki luokasta 
         //synnytetyt oliot ovat samanlaisia. Konstruktorin tunnistaa siitä
         //ettei siinä ole palautustyyppiä ja metodin nimi on sama kuin luokannimi
@@ -18,8 +18,8 @@ namespace Elaimet
         {
             //Konstruktorissa voi olla oletusarvoja
             //Luokan sisällä voidaan käyttää privaattikenttiä
-            nimi = "Histamiini";
-            paino = 89;
+            nimi = "";
+            paino = 0;
         }
         //getterillä ja setterillä annetaan luokan ulkopuolisille sovelluksille mahdollisuus 
         //settaa tai hakea kenttiä
