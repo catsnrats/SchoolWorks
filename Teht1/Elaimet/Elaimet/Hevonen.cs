@@ -18,11 +18,11 @@ namespace Elaimet
         {
             //Konstruktorissa voi olla oletusarvoja
             //Luokan sisällä voidaan käyttää privaattikenttiä
-            nimi = "";
-            paino = 0;
+            nimi = "Histamiini";
+            paino = 89;
         }
         //getterillä ja setterillä annetaan luokan ulkopuolisille sovelluksille mahdollisuus 
-        // settaa tai hakea kenttiä
+        //settaa tai hakea kenttiä
         public string Nimi
         {
             get
