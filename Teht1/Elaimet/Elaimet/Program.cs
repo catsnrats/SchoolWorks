@@ -25,6 +25,9 @@ namespace Elaimet
     {
         static void Main(string[] args)
         {
+            // Selvennystä eläinten välille...
+            Console.WriteLine("\u001B[3mHevos-olio:\u001B[0m");
+           
             //Tässä luot luokasta olion
             Hevonen cHevonen = new Hevonen();
             cHevonen.nimi = "Histamiini";
@@ -35,9 +38,16 @@ namespace Elaimet
             cHevonen.nimi = "Vitamiini";
             cHevonen.paino = 450;
             //Tulosta nyt olion nimi ja paino, jotta varmistat että muutos tapahtui
-            Console.WriteLine(cHevonen.nimi + " " + cHevonen.paino + " kg");
-            Console.Read();
+            Console.WriteLine(cHevonen.nimi + " " + cHevonen.paino + " kg \n");
 
+            Console.WriteLine("\u001B[3mKissa-olio:\u001B[0m");
+            // Luodaan kissa-luokasta olio. Nimetään kissa ja tulostetaan nimi.
+            Kissa feralCat = new Kissa();
+            feralCat.nimi = "Jenkku";
+            Console.WriteLine("Kissan nimi: " + feralCat.nimi);
+
+            
+            Console.Read();
         }
     }
 }
