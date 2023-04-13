@@ -15,7 +15,7 @@ namespace Elaimet
         public Kissa() // Parametriton konstruktori
         {
         }
-        public Kissa(int kissaIka, String kissaNimi) // Parametrillinen konstruktori
+        public Kissa(String kissaNimi, int kissaIka) // Parametrillinen konstruktori
         {
             ika = kissaIka;
             nimi = kissaNimi;

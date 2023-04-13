@@ -45,13 +45,17 @@ namespace Elaimet
             Kissa feralCat = new Kissa();
             feralCat.nimi = "Jenkku";
             feralCat.ika = 3;
-            Console.WriteLine("Kissa: " + feralCat.nimi + " " + feralCat.ika + " vuotta.");
+            Console.WriteLine("Kissa: " + feralCat.nimi + ", " + feralCat.ika + "-vuotta.");
 
             // Asetetaan feralCat-oliolle uusi nimi metodin avulla. Ja palautetaan aiemmin annettu ikä metodin avulla.
             feralCat.AsetaKissanNimi("Viipottaja");
-            Console.WriteLine("Kissa: " + feralCat.PalautaKissanNimi() + " " + feralCat.PalautaKissanIka() + " vuotta.");
-            
+            Console.WriteLine("Kissa: " + feralCat.PalautaKissanNimi() + ", " + feralCat.PalautaKissanIka() + "-vuotta.");
 
+            // Uusi Kissa-luokasta johdettu olio käyttäen parametrillista konstruktoria
+            Kissa katti = new Kissa("Karvinen", 2);
+            // Tulostetaan katti-olion nimi ja ika
+            Console.WriteLine("Kissa: " + katti.nimi + ", " + katti.ika + "-vuotta.");
+           
             Console.Read();
         }
     }
