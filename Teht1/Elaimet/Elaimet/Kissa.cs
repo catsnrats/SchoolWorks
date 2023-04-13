@@ -20,15 +20,15 @@ namespace Elaimet
             ika = kissaIka;
             nimi = kissaNimi;
         }
-        public void AsetaKissanNimi(String kissaNimi) 
+        public void AsetaKissanNimi(String kissaNimi) // Metodi olion nimeämiseen
         {
             nimi = kissaNimi;
         }
-        public String PalautaKissanNimi()
+        public String PalautaKissanNimi() // Metodi olion nimi-merkkijonon palauttamiseen
         { 
             return nimi;
         }
-        public int PalautaKissanIka()
+        public int PalautaKissanIka() // Metodi olion ika-muuttujan palauttamiseen
         {
             return ika;
         }
