@@ -40,13 +40,18 @@ namespace Elaimet
             //Tulosta nyt olion nimi ja paino, jotta varmistat että muutos tapahtui
             Console.WriteLine(cHevonen.nimi + " " + cHevonen.paino + " kg \n");
 
+            // Luodaan kissa-luokasta olio. Nimetään kissa, asetetaan ika ja tulostetaan nimi.
             Console.WriteLine("\u001B[3mKissa-olio:\u001B[0m");
-            // Luodaan kissa-luokasta olio. Nimetään kissa ja tulostetaan nimi.
             Kissa feralCat = new Kissa();
             feralCat.nimi = "Jenkku";
-            Console.WriteLine("Kissan nimi: " + feralCat.nimi);
+            feralCat.ika = 3;
+            Console.WriteLine("Kissa: " + feralCat.nimi + " " + feralCat.ika + " vuotta.");
 
+            // Asetetaan feralCat-oliolle uusi nimi metodin avulla. Ja palautetaan aiemmin annettu ikä metodin avulla.
+            feralCat.AsetaKissanNimi("Viipottaja");
+            Console.WriteLine("Kissa: " + feralCat.PalautaKissanNimi() + " " + feralCat.PalautaKissanIka() + " vuotta.");
             
+
             Console.Read();
         }
     }

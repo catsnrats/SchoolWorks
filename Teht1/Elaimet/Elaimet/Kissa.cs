@@ -9,7 +9,7 @@ namespace Elaimet
     class Kissa
     {
         // Attribuutit oliota varten
-        private int ika;
+        public int ika;
         public String nimi;
 
         public Kissa() // Parametriton konstruktori
@@ -17,20 +17,20 @@ namespace Elaimet
         }
         public Kissa(int kissaIka, String kissaNimi) // Parametrillinen konstruktori
         {
-            this.ika = kissaIka;
-            this.nimi = kissaNimi;
+            ika = kissaIka;
+            nimi = kissaNimi;
         }
         public void AsetaKissanNimi(String kissaNimi) 
         {
-            this.nimi = kissaNimi;
+            nimi = kissaNimi;
         }
-        public String PalautaKissanNimi(String kissaNimi)
+        public String PalautaKissanNimi()
         { 
-            return this.nimi;
+            return nimi;
         }
-        public int PalautaKissanIka(int kissaIka)
+        public int PalautaKissanIka()
         {
-            return this.ika;
+            return ika;
         }
     }
 }
