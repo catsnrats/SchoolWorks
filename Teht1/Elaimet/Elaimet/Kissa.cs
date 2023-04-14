@@ -22,7 +22,15 @@ namespace Elaimet
         }
         public void AsetaKissanNimi(String kissaNimi) // Metodi olion nimeämiseen
         {
-            nimi = kissaNimi;
+            String naNames = "Hilda";
+            if (named(kissaNimi, naNames))
+            {
+                Console.WriteLine("Väärä nimi.");    
+            }
+            else
+            {
+                nimi = kissaNimi;
+            }
         }
         public String PalautaKissanNimi() // Metodi olion nimi-merkkijonon palauttamiseen
         {
@@ -32,7 +40,7 @@ namespace Elaimet
         {
             int i = 0; // Iän vertailuarvo
 
-            if (aged(kissaIka, i))
+            if (aged(kissaIka, i)) // Käyttää aged-metodia iän vertaamiseen.
             {
                 Console.WriteLine("Kissan ikä ei voi olla negatiivinen.");
             }
@@ -48,6 +56,10 @@ namespace Elaimet
         public int PalautaKissanIka() // Metodi olion ika-muuttujan palauttamiseen
         {
             return ika;
+        }
+        static bool named(String naNames, String kissaNimi)
+        {
+            return kissaNimi == naNames;
         }
     } 
 }

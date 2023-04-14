@@ -66,7 +66,8 @@ namespace Elaimet
             ciaCat.AsetaKissanIka(-1);
             Console.WriteLine(ciaCat.nimi + ", " + ciaCat.ika + "-vuotta.");
 
-            //Console.WriteLine(aged);
+            ciaCat.AsetaKissanNimi("Hilda");
+            Console.WriteLine(ciaCat.nimi);
 
             Console.Read();
         }
