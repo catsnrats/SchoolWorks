@@ -30,7 +30,14 @@ namespace Elaimet
         }
         public void AsetaKissanIka(int kissaIka) // Metodi olion iän asettamiseen
         {
-            ika = kissaIka;
+            if (kissaIka < 0)
+            {
+                Console.WriteLine("Kissan ikä ei voi olla negatiivinen.");
+            }
+            else 
+            {
+                ika = kissaIka;
+            }
         }
         public int PalautaKissanIka() // Metodi olion ika-muuttujan palauttamiseen
         {
