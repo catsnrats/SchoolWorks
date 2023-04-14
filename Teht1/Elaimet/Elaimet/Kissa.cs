@@ -25,12 +25,16 @@ namespace Elaimet
             nimi = kissaNimi;
         }
         public String PalautaKissanNimi() // Metodi olion nimi-merkkijonon palauttamiseen
-        { 
+        {
             return nimi;
+        }
+        public void AsetaKissanIka(int kissaIka) // Metodi olion iän asettamiseen
+        {
+            ika = kissaIka;
         }
         public int PalautaKissanIka() // Metodi olion ika-muuttujan palauttamiseen
         {
             return ika;
         }
-    }
+    } 
 }

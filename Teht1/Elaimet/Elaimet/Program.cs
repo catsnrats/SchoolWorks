@@ -55,7 +55,12 @@ namespace Elaimet
             Kissa katti = new Kissa("Karvinen", 2);
             // Tulostetaan katti-olion nimi ja ika
             Console.WriteLine("Kissa: " + katti.nimi + ", " + katti.ika + "-vuotta.");
-           
+
+            // Kokeilee AsetaKissanIka-metodia uuden Kissa-luokan olion kera
+            Kissa ciaCat = new Kissa("Fox", 1);
+            ciaCat.AsetaKissanIka(5);
+            Console.WriteLine(ciaCat.nimi + ", " + ciaCat.ika + "-vuotta.");
+
             Console.Read();
         }
     }
