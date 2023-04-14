@@ -57,12 +57,12 @@ namespace Elaimet
             Console.WriteLine("Kissa: " + katti.nimi + ", " + katti.ika + "-vuotta. \n");
 
             // Kokeilee AsetaKissanIka-metodia uuden Kissa-luokan olion kera
-            Console.WriteLine("\u001B[3mKissa-luokan arvon palauttaminen:\u001B[0m");
+            Console.WriteLine("\u001B[3mKissa-luokan arvon palauttaminen:\u001B[0m"); // Seloste tehtävän selkeyttämiseksi
             // Luodaan uusi olio parametreineen ja tulostetaan se
             Kissa ciaCat = new Kissa("Fox", 0);
             Console.WriteLine(ciaCat.nimi + ", " + ciaCat.ika + "-vuotta.");
             // Asetetaan Fox-kissalle uusi ikä
-            ciaCat.AsetaKissanIka(2);
+            ciaCat.AsetaKissanIka(5);
             Console.WriteLine(ciaCat.nimi + ", " + ciaCat.ika + "-vuotta.");
 
             Console.Read();
