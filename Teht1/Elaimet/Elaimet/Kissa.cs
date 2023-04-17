@@ -12,6 +12,7 @@ namespace Elaimet
         // Attribuutit oliota varten
         private int ika = 0;
         public String nimi = "Miuku";
+        private String naNames = "Hilda";
 
         public Kissa() // Parametriton konstruktori
         {
@@ -23,11 +24,11 @@ namespace Elaimet
         }
         public void AsetaKissanNimi(String kissaNimi) // Metodi olion nimeämiseen
         {
-            String naNames = "Hilda";
+            // String naNames = "Hilda";
             // Vertaa naNames-muuttujaa kissaNimi-muuttujaan välittämättä onko fontti iso vai pieni
             if (naNames.Equals(kissaNimi, StringComparison.OrdinalIgnoreCase))
             {
-                Console.WriteLine("Väärä nimi: Kissan nimi ei voi olla Hilda.");    
+                Console.WriteLine("Väärä nimi: Kissan nimi ei voi olla Hilda.");
             }
             else
             {
@@ -46,7 +47,7 @@ namespace Elaimet
             {
                 Console.WriteLine("Kissan ikä ei voi olla negatiivinen.");
             }
-            else 
+            else
             {
                 ika = kissaIka;
             }
@@ -55,6 +56,21 @@ namespace Elaimet
         {
             get { return ika; }
             set { ika = value; }
+        }
+        // Kokeiltu suojata kissan nimi ja getin ja setin toimintaa
+        // Jatketaan nimen testaamista myöhemmin
+        public string Name 
+        {
+            get { return nimi; }
+            set
+            {
+                if (naNames.Equals(nimi, StringComparison.OrdinalIgnoreCase))
+                    {
+                    nimi = "Mauku";
+                }
+                else
+                { nimi = "Miuku"; }
+            }
         }
         static bool aged(int kissaIka, int i) // Palauttaa boolean tiedon jos muutos ei toteudu
         {

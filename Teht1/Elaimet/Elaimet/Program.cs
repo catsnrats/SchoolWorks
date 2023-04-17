@@ -43,7 +43,7 @@ namespace Elaimet
             // Luodaan kissa-luokasta olio. Nimetään kissa, asetetaan ika ja tulostetaan nimi.
             Console.WriteLine("Tehtävä: Kissa-luokka ja -oliot:");
             Kissa feralCat = new Kissa();
-            Console.WriteLine("Kissa: " + feralCat.nimi + ", " + feralCat.Ika + "-vuotta.");
+            Console.WriteLine("Kissa: " + feralCat.Name + ", " + feralCat.Ika + "-vuotta.");
 
             // Asetetaan feralCat-oliolle uusi nimi metodin avulla. Ja palautetaan aiemmin annettu ikä metodin avulla.
             feralCat.AsetaKissanNimi("Viipottaja");
@@ -63,6 +63,7 @@ namespace Elaimet
             // Asetetaan Fox-kissalle uusi ikä (if-ehdon testaus)
             Console.WriteLine("Yrittää asettaa olion ciaCat iän miinukselle ja nimetä Hildaksi.");
             ciaCat.AsetaKissanIka(-1);
+           // ciaCat.nimi = "Hilda";
             Console.WriteLine(ciaCat.nimi + ", " + ciaCat.Ika + "-vuotta.");
             // Yrittää asettaa kissalle kielletyn nimen
             ciaCat.AsetaKissanNimi("hIlDa");
