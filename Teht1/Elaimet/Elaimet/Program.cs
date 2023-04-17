@@ -26,7 +26,7 @@ namespace Elaimet
         static void Main(string[] args)
         {
             // Selvennystä eläinten välille...
-            Console.WriteLine("\u001B[3mHevos-olio:\u001B[0m");
+            Console.WriteLine("Hevos-olio:");
            
             //Tässä luot luokasta olion
             Hevonen cHevonen = new Hevonen();
@@ -41,7 +41,7 @@ namespace Elaimet
             Console.WriteLine(cHevonen.nimi + " " + cHevonen.paino + " kg \n");
 
             // Luodaan kissa-luokasta olio. Nimetään kissa, asetetaan ika ja tulostetaan nimi.
-            Console.WriteLine("\u001B[3mKissa-olio:\u001B[0m");
+            Console.WriteLine("Kissa-olio:");
             Kissa feralCat = new Kissa();
             feralCat.nimi = "Jenkku";
             feralCat.ika = 3;
@@ -57,7 +57,7 @@ namespace Elaimet
             Console.WriteLine("Kissa: " + katti.nimi + ", " + katti.ika + "-vuotta. \n");
 
             // Kokeilee AsetaKissanIka-metodia uuden Kissa-luokan olion kera
-            Console.WriteLine("\u001B[3mKissa-luokan arvon palauttaminen:\u001B[0m"); // Seloste tehtävän selkeyttämiseksi
+            Console.WriteLine("Kissa-luokan arvon palauttaminen:"); // Seloste tehtävän selkeyttämiseksi
             // Luodaan uusi olio parametreineen ja tulostetaan se
             Kissa ciaCat = new Kissa("Fox", 0);
             Console.WriteLine(ciaCat.nimi + ", " + ciaCat.ika + "-vuotta.");
