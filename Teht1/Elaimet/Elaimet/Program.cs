@@ -26,7 +26,7 @@ namespace Elaimet
         static void Main(string[] args)
         {
             // Selvennystä eläinten välille...
-            Console.WriteLine("Hevos-olio:");
+            Console.WriteLine("Tehtävä: Hevos-olio:");
            
             //Tässä luot luokasta olion
             Hevonen cHevonen = new Hevonen();
@@ -41,10 +41,8 @@ namespace Elaimet
             Console.WriteLine(cHevonen.nimi + " " + cHevonen.paino + " kg \n");
 
             // Luodaan kissa-luokasta olio. Nimetään kissa, asetetaan ika ja tulostetaan nimi.
-            Console.WriteLine("Kissa-olio:");
+            Console.WriteLine("Tehtävä: Kissa-luokka ja -oliot:");
             Kissa feralCat = new Kissa();
-            feralCat.nimi = "Jenkku";
-            feralCat.Ika = 3;
             Console.WriteLine("Kissa: " + feralCat.nimi + ", " + feralCat.Ika + "-vuotta.");
 
             // Asetetaan feralCat-oliolle uusi nimi metodin avulla. Ja palautetaan aiemmin annettu ikä metodin avulla.
@@ -57,17 +55,18 @@ namespace Elaimet
             Console.WriteLine("Kissa: " + katti.nimi + ", " + katti.Ika + "-vuotta. \n");
             
             // Kokeilee AsetaKissanIka-metodia uuden Kissa-luokan olion kera
-            Console.WriteLine("Kissa-luokan arvon palauttaminen:"); // Seloste tehtävän selkeyttämiseksi
+            Console.WriteLine("Tehtävä: Kissa-luokan arvon palauttaminen:"); // Seloste tehtävän selkeyttämiseksi
             // Luodaan uusi olio parametreineen ja tulostetaan se
-            Kissa ciaCat = new Kissa("Fox", 0);
-            Console.WriteLine(ciaCat.nimi + ", " + ciaCat.Ika + "-vuotta.");
+            Kissa ciaCat = new Kissa("Fox", 7);
+            Console.WriteLine("Kissa: " + ciaCat.nimi + ", " + ciaCat.Ika + "-vuotta. \n");
 
             // Asetetaan Fox-kissalle uusi ikä (if-ehdon testaus)
+            Console.WriteLine("Yrittää asettaa olion ciaCat iän miinukselle ja nimetä Hildaksi.");
             ciaCat.AsetaKissanIka(-1);
             Console.WriteLine(ciaCat.nimi + ", " + ciaCat.Ika + "-vuotta.");
-
-            ciaCat.AsetaKissanNimi("hiLDa");
-            Console.WriteLine(ciaCat.nimi);
+            // Yrittää asettaa kissalle kielletyn nimen
+            ciaCat.AsetaKissanNimi("hIlDa");
+            Console.WriteLine("Kissan nimi on edelleen: " + ciaCat.nimi);
 
             Console.Read();
         }

@@ -10,8 +10,8 @@ namespace Elaimet
     class Kissa
     {
         // Attribuutit oliota varten
-        private int ika;
-        public String nimi;
+        private int ika = 0;
+        public String nimi = "Miuku";
 
         public Kissa() // Parametriton konstruktori
         {
