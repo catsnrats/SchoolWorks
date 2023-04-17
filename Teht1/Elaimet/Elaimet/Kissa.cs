@@ -23,9 +23,10 @@ namespace Elaimet
         public void AsetaKissanNimi(String kissaNimi) // Metodi olion nimeämiseen
         {
             String naNames = "Hilda";
-            if (named(kissaNimi, naNames))
+            // Vertaa naNames-muuttujaa kissaNimi-muuttujaan välittämättä onko fontti iso vai pieni
+            if (naNames.Equals(kissaNimi, StringComparison.OrdinalIgnoreCase))
             {
-                Console.WriteLine("Väärä nimi.");    
+                Console.WriteLine("Väärä nimi: Kissan nimi ei voi olla Hilda.");    
             }
             else
             {
@@ -57,9 +58,9 @@ namespace Elaimet
         {
             return ika;
         }
-        static bool named(String naNames, String kissaNimi)
+       /* static bool named(String naNames, String kissaNimi)
         {
             return kissaNimi == naNames;
-        }
+        } */
     } 
 }
