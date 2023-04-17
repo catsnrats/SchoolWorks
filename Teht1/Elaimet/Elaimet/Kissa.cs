@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,7 +10,7 @@ namespace Elaimet
     class Kissa
     {
         // Attribuutit oliota varten
-        public int ika;
+        private int ika;
         public String nimi;
 
         public Kissa() // Parametriton konstruktori
@@ -50,6 +51,11 @@ namespace Elaimet
                 ika = kissaIka;
             }
         }
+        public int Ika // kokeiltu getteriä ja setteriä privaattimuuttujan palauttamiseen
+        {
+            get { return ika; }
+            set { ika = value; }
+        }
         static bool aged(int kissaIka, int i) // Palauttaa boolean tiedon jos muutos ei toteudu
         {
             return kissaIka < i;
@@ -58,9 +64,5 @@ namespace Elaimet
         {
             return ika;
         }
-       /* static bool named(String naNames, String kissaNimi)
-        {
-            return kissaNimi == naNames;
-        } */
     } 
 }

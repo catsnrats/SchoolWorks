@@ -44,8 +44,8 @@ namespace Elaimet
             Console.WriteLine("Kissa-olio:");
             Kissa feralCat = new Kissa();
             feralCat.nimi = "Jenkku";
-            feralCat.ika = 3;
-            Console.WriteLine("Kissa: " + feralCat.nimi + ", " + feralCat.ika + "-vuotta.");
+            feralCat.Ika = 3;
+            Console.WriteLine("Kissa: " + feralCat.nimi + ", " + feralCat.Ika + "-vuotta.");
 
             // Asetetaan feralCat-oliolle uusi nimi metodin avulla. Ja palautetaan aiemmin annettu ikä metodin avulla.
             feralCat.AsetaKissanNimi("Viipottaja");
@@ -54,17 +54,17 @@ namespace Elaimet
             // Uusi Kissa-luokasta johdettu olio käyttäen parametrillista konstruktoria
             Kissa katti = new Kissa("Karvinen", 2);
             // Tulostetaan katti-olion nimi ja ika
-            Console.WriteLine("Kissa: " + katti.nimi + ", " + katti.ika + "-vuotta. \n");
-
+            Console.WriteLine("Kissa: " + katti.nimi + ", " + katti.Ika + "-vuotta. \n");
+            
             // Kokeilee AsetaKissanIka-metodia uuden Kissa-luokan olion kera
             Console.WriteLine("Kissa-luokan arvon palauttaminen:"); // Seloste tehtävän selkeyttämiseksi
             // Luodaan uusi olio parametreineen ja tulostetaan se
             Kissa ciaCat = new Kissa("Fox", 0);
-            Console.WriteLine(ciaCat.nimi + ", " + ciaCat.ika + "-vuotta.");
+            Console.WriteLine(ciaCat.nimi + ", " + ciaCat.Ika + "-vuotta.");
 
             // Asetetaan Fox-kissalle uusi ikä (if-ehdon testaus)
             ciaCat.AsetaKissanIka(-1);
-            Console.WriteLine(ciaCat.nimi + ", " + ciaCat.ika + "-vuotta.");
+            Console.WriteLine(ciaCat.nimi + ", " + ciaCat.Ika + "-vuotta.");
 
             ciaCat.AsetaKissanNimi("hiLDa");
             Console.WriteLine(ciaCat.nimi);
