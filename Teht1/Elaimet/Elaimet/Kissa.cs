@@ -12,7 +12,7 @@ namespace Elaimet
         // Attribuutit oliota varten
         private int ika = 0;
         public String nimi = "Miuku";
-        private String naNames = "Hilda";
+        private string naNames = "Hilda";
 
         public Kissa() // Parametriton konstruktori
         {
@@ -57,21 +57,6 @@ namespace Elaimet
             set { ika = value; }
             get { return ika; }
         }
-        // Kokeiltu suojata kissan nimi ja getin ja setin toimintaa
-        // Jatketaan nimen testaamista myöhemmin
-       /* public string Name 
-        {
-            set
-            {
-                if (naNames.Equals(nimi, StringComparison.OrdinalIgnoreCase))
-                    {
-                    nimi = "Mauku";
-                }
-                else
-                { nimi = "Miuku"; }
-            }
-            get { return nimi; }
-        }*/
         static bool aged(int kissaIka, int i) // Palauttaa boolean tiedon jos muutos ei toteudu
         {
             return kissaIka < i;

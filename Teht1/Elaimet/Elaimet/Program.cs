@@ -25,7 +25,8 @@ namespace Elaimet
     {
         static void Main(string[] args)
         {
-            string cat_name;
+            string cat_name; // Muuttujat cat_name ja cat_age käyttäjän syötettä varten
+            int cat_age;
 
             // Selvennystä eläinten välille...
             Console.WriteLine("Tehtävä: Hevos-olio:");
@@ -63,13 +64,15 @@ namespace Elaimet
             Console.WriteLine("Kissa: " + ciaCat.nimi + ", " + ciaCat.Ika + "-vuotta. \n");
 
             // Asetetaan Fox-kissalle uusi ikä (if-ehdon testaus)
-            Console.WriteLine("Yrittää asettaa olion ciaCat iän miinukselle ja nimetä Hildaksi.");
-            ciaCat.AsetaKissanIka(-1);
-           // ciaCat.nimi = "Hilda";
-            Console.WriteLine(ciaCat.nimi + ", " + ciaCat.Ika + "-vuotta.");
-            // Yrittää asettaa kissalle kielletyn nimen
-            Console.WriteLine("Anna kissalle nimi: ");
-            cat_name = Console.ReadLine();
+            Console.WriteLine("Nimi ei voi olla Hilda, eikä ikä negatiivinen.");
+            Console.WriteLine("Anna kissalle ikä:");
+            cat_age = int.Parse(Console.ReadLine()); // Kysytään käyttäjältä ikä kissalle
+            ciaCat.AsetaKissanIka(cat_age);
+            Console.WriteLine("Kissa: " + ciaCat.nimi + ", " + ciaCat.Ika + "-vuotta.");
+
+            // Kysytään kissan nimi cat_name-muuttujaan
+            Console.WriteLine("Anna kissalle uusi nimi: ");
+            cat_name = Console.ReadLine(); 
             ciaCat.AsetaKissanNimi(cat_name);
             Console.WriteLine("Kissan nimi on: " + ciaCat.nimi);
 
