@@ -10,7 +10,17 @@ namespace Velka
     {
         static void Main(string[] args)
         {
-            Velka laina = new Velka(1000, 5.2); // Velka-luokasta johdettu olio laina
+            Velka laina = new Velka(1000, 0.05); // Velka-luokasta johdettu olio laina
+            // Alla kutsutaan funktioita, jotta nähdään OdotaVuosi()-funktion yhtälön vaikutus...
+            laina.TulostaSaldo();
+            laina.OdotaVuosi();
+            laina.TulostaSaldo();
+            laina.OdotaVuosi();
+            laina.TulostaSaldo();
+            laina.OdotaVuosi();
+            laina.TulostaSaldo();
+
+            Console.Read();
         }
     }
 }
