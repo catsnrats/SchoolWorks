@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace PilliTehtava
 {
-    internal class Pilli
+    internal class Pilli // Luokka Pilli
     {
-        public string aani;
+        private string aani; // Luokan suojattu (private) attribuutti
 
-        public Pilli(String pillinAani) 
+        public Pilli(String pillinAani) // Parametrillinen konstruktori Pilli
         {
             aani = pillinAani;
         }
 
-        public void soi() 
-        { }
+        public void soi() // Metodi parametrin tulostamiseen
+        {
+            Console.WriteLine(aani);
+        }
     }
 }

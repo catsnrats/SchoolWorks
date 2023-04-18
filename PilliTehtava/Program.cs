@@ -14,7 +14,10 @@ namespace PilliTehtava
             Pilli sorsapilli = new Pilli("Kwaak");
             Pilli kukkopilli = new Pilli("Peef");
 
-            Console.WriteLine(sorsapilli.aani); // Kokeiltu oliota
+            // Kutsutaan soi()-metodia yllä luodoilla olioilla
+            sorsapilli.soi();
+            kukkopilli.soi();
+            sorsapilli.soi();
 
             Console.Read();
         }
