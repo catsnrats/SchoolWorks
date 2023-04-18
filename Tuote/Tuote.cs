@@ -23,7 +23,7 @@ namespace Tuote
 
         public void TulostaTuote() // Metodi olion tietojen tulostukseen
         {
-            Console.WriteLine(nimi + ":" + " Hinta: " + hinta + " eur, " + maara + " kpl");
+            Console.WriteLine(nimi + "," + " hinta: " + hinta + " eur, " + maara + " kpl");
         } 
     }
 }
