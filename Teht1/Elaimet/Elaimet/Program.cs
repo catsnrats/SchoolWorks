@@ -25,6 +25,8 @@ namespace Elaimet
     {
         static void Main(string[] args)
         {
+            string cat_name;
+
             // Selvennystä eläinten välille...
             Console.WriteLine("Tehtävä: Hevos-olio:");
            
@@ -66,8 +68,10 @@ namespace Elaimet
            // ciaCat.nimi = "Hilda";
             Console.WriteLine(ciaCat.nimi + ", " + ciaCat.Ika + "-vuotta.");
             // Yrittää asettaa kissalle kielletyn nimen
-            ciaCat.AsetaKissanNimi("hIlDa");
-            Console.WriteLine("Kissan nimi on edelleen: " + ciaCat.nimi);
+            Console.WriteLine("Anna kissalle nimi: ");
+            cat_name = Console.ReadLine();
+            ciaCat.AsetaKissanNimi(cat_name);
+            Console.WriteLine("Kissan nimi on: " + ciaCat.nimi);
 
             Console.Read();
         }

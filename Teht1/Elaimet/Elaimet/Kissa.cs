@@ -28,7 +28,7 @@ namespace Elaimet
             // Vertaa naNames-muuttujaa kissaNimi-muuttujaan välittämättä onko fontti iso vai pieni
             if (naNames.Equals(kissaNimi, StringComparison.OrdinalIgnoreCase))
             {
-                Console.WriteLine("Väärä nimi: Kissan nimi ei voi olla Hilda.");
+                Console.WriteLine("Kissan nimi ei voi olla Hilda.");
             }
             else
             {
