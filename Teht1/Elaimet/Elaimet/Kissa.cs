@@ -54,14 +54,13 @@ namespace Elaimet
         }
         public int Ika // kokeiltu getteriä ja setteriä privaattimuuttujan palauttamiseen
         {
-            get { return ika; }
             set { ika = value; }
+            get { return ika; }
         }
         // Kokeiltu suojata kissan nimi ja getin ja setin toimintaa
         // Jatketaan nimen testaamista myöhemmin
-        public string Name 
+       /* public string Name 
         {
-            get { return nimi; }
             set
             {
                 if (naNames.Equals(nimi, StringComparison.OrdinalIgnoreCase))
@@ -71,7 +70,8 @@ namespace Elaimet
                 else
                 { nimi = "Miuku"; }
             }
-        }
+            get { return nimi; }
+        }*/
         static bool aged(int kissaIka, int i) // Palauttaa boolean tiedon jos muutos ei toteudu
         {
             return kissaIka < i;
