@@ -8,16 +8,16 @@ namespace PilliTehtava
 {
     internal class Pilli // Luokka Pilli
     {
-        private string aani; // Luokan suojattu (private) attribuutti
+        private string _aani; // Luokan suojattu (private) attribuutti
 
         public Pilli(String pillinAani) // Parametrillinen konstruktori Pilli
         {
-            aani = pillinAani;
+            _aani = pillinAani;
         }
 
         public void soi() // Metodi parametrin tulostamiseen
         {
-            Console.WriteLine(aani);
+            Console.WriteLine(_aani);
         }
     }
 }
