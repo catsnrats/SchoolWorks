@@ -8,17 +8,17 @@ namespace Musiikki
 {
     internal class Musiikkikappale
     {
-        private string nimi; // Muuttujat luokalle Musiikkikappale
-        private int pituus;
+        private string _nimi; // Muuttujat luokalle Musiikkikappale
+        private int _pituus;
 
         public Musiikkikappale(string nimi, int pituus) // Konstruktori parametreineen
         {
-            this.nimi = nimi;
-            this.pituus = pituus;
+            this._nimi = nimi;
+            this._pituus = pituus;
         }
         public string Nimi() // Palauttaa kappaleen nimen
-        { return nimi; }
+        { return _nimi; }
         public int Pituus() // Palauttaa kappaleen pituuden
-        {  return pituus; }
+        {  return _pituus; }
     }
 }
