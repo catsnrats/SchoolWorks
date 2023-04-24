@@ -11,13 +11,13 @@ namespace Maksukortti
         static void Main(string[] args)
         {
             // Maksukortti-luokasta johdettu kortti olio ja luokasta kutsutut funktiot
-            Maksukortti kortti = new Maksukortti(50);
-            Console.WriteLine(kortti);
-            kortti.SyoEdullisesti();
+            Maksukortti kortti = new Maksukortti(7);
             Console.WriteLine(kortti);
             kortti.SyoMaukkaasti();
+            Console.WriteLine(kortti);
             kortti.SyoEdullisesti();
             Console.WriteLine(kortti);
+            
             //Console.WriteLine($"Kortin saldo: {kortti.LataaRahaa()}");
 
             Console.ReadLine();

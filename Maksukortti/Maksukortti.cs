@@ -14,13 +14,27 @@ namespace Maksukortti
         {
             _saldo = saldo;
         }
-        public void SyoEdullisesti() // Vähentää _saldo-muuttujasta 2.6
+        public void SyoEdullisesti() // Vähentää _saldo-muuttujasta 2.6 jos ehto toteutuu
         {
-            _saldo -= 2.6;
+            if (_saldo >= 2.6)
+            {
+                _saldo -= 2.6;
+            }
+            else
+            {
+                Console.WriteLine("Ruokatilaus ei onnistu. Kortilla ei ole riittävästi rahaa.");
+            }
         }
-        public void SyoMaukkaasti() // Vähentää _saldo-muuttujasta 4.6
+        public void SyoMaukkaasti() // Vähentää _saldo-muuttujasta 4.6, jos ehto toteutuu
         {
-            _saldo -= 4.6;
+            if (_saldo >= 4.6)
+            {
+                _saldo -= 4.6;
+            }
+            else 
+            {
+                Console.WriteLine("Ruokatilaus ei onnistu. Kortilla ei ole riittävästi rahaa.");
+            }
         }
         public double LataaRahaa() // Kysyy käyttäjältä _saldo-muuttujaan lisättävän summan
         {
