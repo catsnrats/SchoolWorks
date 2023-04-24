@@ -10,7 +10,7 @@ namespace Mitta
     {
         private int _mitta; // Private kenttä luokkaan Mittari
 
-        public Mitta() // Paremetritön konstruktori. Asettaa _mitta kentän arvoksi 0
+        public Mittari() // Paremetritön konstruktori. Asettaa _mitta kentän arvoksi 0
         { 
             _mitta = 0;
         }

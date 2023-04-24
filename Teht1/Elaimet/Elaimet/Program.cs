@@ -64,7 +64,7 @@ namespace Elaimet
             Console.WriteLine("Kissa: " + ciaCat.nimi + ", " + ciaCat.Ika + "-vuotta. \n");
 
             // Asetetaan Fox-kissalle uusi ikä (if-ehdon testaus)
-            Console.WriteLine("Nimi ei voi olla Hilda, eikä ikä negatiivinen.");
+            Console.WriteLine("(Nimi ei voi olla Hilda, eikä ikä negatiivinen.)");
             Console.WriteLine("Anna kissalle ikä:");
             cat_age = int.Parse(Console.ReadLine()); // Kysytään käyttäjältä ikä kissalle
             ciaCat.AsetaKissanIka(cat_age);
