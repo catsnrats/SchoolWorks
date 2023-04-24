@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,20 +15,24 @@ namespace Mitta
         { 
             _mitta = 0;
         }
-        public void Lisaa()
+        public void Lisaa() // Kasvattaa muuttujaa _mitta yhdellä
         {
-            _mitta += 1;
+            _mitta++;
         }
-        public void Vahenna()
+        public void Vahenna() // Vähentää muuttujaa _mitta yhdellä
         {
-            _mitta -= 1;
+            _mitta--;
+        }
+        public Boolean Taynna()
+        {
+            if (_mitta >= 5)
+            {
+                return true;
+            }
+            else
+                return false;
         }
         public int Mitta()
         { return _mitta; }
-        public Boolean Taynna()
-        {
-            if (_mitta >= 5);
-                return false; 
-        }
     }
 }

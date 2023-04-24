@@ -14,16 +14,17 @@ namespace Mitta
 
             while (!mittari.Taynna()) 
             {
-                Console.WriteLine("FUBAR");
+                Console.WriteLine("Ei täynnä" + mittari.Mitta());
+                mittari.Lisaa();
             }
 
+            /*mittari.Lisaa();
             mittari.Lisaa();
             mittari.Lisaa();
             mittari.Lisaa();
             mittari.Lisaa();
             mittari.Lisaa();
-            mittari.Lisaa();
-            /* mittari.Vahenna();
+            mittari.Vahenna();
             mittari.Vahenna();
             mittari.Vahenna(); */
             Console.WriteLine(mittari.Mitta());
