@@ -8,22 +8,30 @@ namespace Maksukortti
 {
     internal class Maksukortti
     {
-        private double _saldo;
+        private double _saldo; // Private-muuttuja _saldo
 
-        public Maksukortti(double saldo)
+        public Maksukortti(double saldo) // Konstruktori desimaalimuuttujalla
         {
             _saldo = saldo;
         }
-        public double LataaRahaa() 
+        public void SyoEdullisesti() // Vähentää _saldo-muuttujasta 2.6
+        {
+            _saldo -= 2.6;
+        }
+        public void SyoMaukkaasti() // Vähentää _saldo-muuttujasta 4.6
+        {
+            _saldo -= 4.6;
+        }
+        public double LataaRahaa() // Kysyy käyttäjältä _saldo-muuttujaan lisättävän summan
         {
             Console.WriteLine("Kortille ladattava summa: ");
             _saldo += int.Parse(Console.ReadLine());
             return _saldo;
         }
 
-        /*public override string ToString()
+        public override string ToString() // Palauttaa mm. _saldo-muuttujan muodossa merkkijono
         {
-            return base.ToString();
-        }*/
+            return "Kortilla on rahaa " + _saldo + " euroa.";
+        }
     }
 }

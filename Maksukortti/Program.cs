@@ -12,8 +12,9 @@ namespace Maksukortti
         {
             Maksukortti kortti = new Maksukortti(50);
 
-           
-            Console.WriteLine($"Kortin saldo: {kortti.LataaRahaa()}");
+            //kortti.SyoEdullisesti();
+            Console.WriteLine(kortti);
+            //Console.WriteLine($"Kortin saldo: {kortti.LataaRahaa()}");
 
             Console.ReadLine();
         }
