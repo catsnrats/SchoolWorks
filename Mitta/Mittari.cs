@@ -23,7 +23,7 @@ namespace Mitta
         {
             _mitta--;
         }
-        public Boolean Taynna()
+        public Boolean Taynna() // Metodi palauttaa true, jos _mitta >= 5, muutoin palauttaa false
         {
             if (_mitta >= 5)
             {
@@ -32,7 +32,7 @@ namespace Mitta
             else
                 return false;
         }
-        public int Mitta()
+        public int Mitta() // Metodi _mitta-muuttujan palauttamiseen
         { return _mitta; }
     }
 }
