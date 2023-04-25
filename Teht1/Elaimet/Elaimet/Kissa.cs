@@ -57,7 +57,7 @@ namespace Elaimet
             set { ika = value; }
             get { return ika; }
         }
-        static bool aged(int kissaIka, int i) // Palauttaa boolean tiedon jos muutos ei toteudu
+        static bool aged(int kissaIka, int i) // Palauttaa boolean tiedon
         {
             return kissaIka < i;
         }
