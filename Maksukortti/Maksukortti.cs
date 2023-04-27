@@ -9,9 +9,8 @@ namespace Maksukortti
 {
     internal class Maksukortti
     {
-        private double _saldo; // Private-muuttuja _saldo
-        private string _vastaus;
-
+        private double _saldo, _eurMaara; // Private-muuttuja _saldo ja _eurMaara
+        private string _vastaus; // Muuttuja käyttäjän syötteen vastaanottamiseen
         public Maksukortti(double saldo) // Konstruktori desimaalimuuttujalla
         {
             _saldo = saldo;
@@ -47,8 +46,13 @@ namespace Maksukortti
             // vastaus _saldo-muuttujaan. Muutoin tulostaa _saldo:n arvon
             while (_vastaus == "Y" | _vastaus == "y")
             {
+                // Tarkistus nollaa alemman syötteen varalle. Vain positiivinen luku lisätään muuttujaan _saldo.
                 Console.WriteLine("Kortille ladattava summa: ");
-                _saldo += Convert.ToInt32(Console.ReadLine());
+                _eurMaara = Convert.ToDouble(Console.ReadLine());
+                if (_eurMaara >= 0)
+                {
+                    _saldo += _eurMaara;
+                }
                 return LataaRahaa();
             }
             return _saldo;
