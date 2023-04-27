@@ -65,5 +65,9 @@ namespace Elaimet
         {
             return ika;
         }
+        public override string ToString() // ToString()-metodi olion kenttien tulostamiseen
+        {
+            return "Kissa: " + nimi + " ikä " + ika;
+        }
     } 
 }

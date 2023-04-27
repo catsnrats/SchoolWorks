@@ -53,7 +53,7 @@ namespace Elaimet
             Console.WriteLine("Kissa: " + feralCat.PalautaKissanNimi() + ", " + feralCat.PalautaKissanIka() + "-vuotta.");
 
             // Uusi Kissa-luokasta johdettu olio käyttäen parametrillista konstruktoria
-            Kissa katti = new Kissa("Karvinen", 2);
+            Kissa katti = new Kissa();
             // Tulostetaan katti-olion nimi ja ika
             Console.WriteLine("Kissa: " + katti.nimi + ", " + katti.Ika + "-vuotta. \n");
             
@@ -75,6 +75,9 @@ namespace Elaimet
             cat_name = Console.ReadLine(); 
             ciaCat.AsetaKissanNimi(cat_name);
             Console.WriteLine("Kissan nimi on: " + ciaCat.nimi);
+
+            Console.WriteLine("\nToString()-metodilla katti-olion tiedot:");
+            Console.WriteLine(katti); // Käyttää metodia ToString() katti-olion tietojen tulostamiseen
 
             Console.Read();
         }
