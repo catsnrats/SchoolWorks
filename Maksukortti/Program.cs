@@ -18,7 +18,8 @@ namespace Maksukortti
             kortti.SyoEdullisesti();
             Console.WriteLine(kortti);
             
-            //Console.WriteLine($"Kortin saldo: {kortti.LataaRahaa()}");
+            // Kutsuu LataaRahaa()-metodia
+            Console.WriteLine($"Kortin saldo: {kortti.LataaRahaa()}");
 
             Console.ReadLine();
         }
