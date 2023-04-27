@@ -42,18 +42,26 @@ namespace Maksukortti
             Console.WriteLine("Ladataanko kortille rahaa? (Y/N) ");
             _vastaus = Console.ReadLine();
 
-            // Kun käyttäjän vastaus on "Y" tai "y", kysytään latauskysymys uudestaan ja lisätään
-            // vastaus _saldo-muuttujaan. Muutoin tulostaa _saldo:n arvon
-            while (_vastaus == "Y" | _vastaus == "y")
+            /* Kun käyttäjän vastaus on "Y" tai "y", kysytään latauskysymys uudestaan ja lisätään
+            vastaus _saldo-muuttujaan. Muutoin tulostaa _saldo:n arvon. Käytetty poikkeuksenkäsittelyä
+            _eurMaara-muuttujan syötteen suhteen. */
+            try
             {
-                // Tarkistus nollaa alemman syötteen varalle. Vain positiivinen luku lisätään muuttujaan _saldo.
-                Console.WriteLine("Kortille ladattava summa: ");
-                _eurMaara = Convert.ToDouble(Console.ReadLine());
-                if (_eurMaara >= 0)
+                while (_vastaus == "Y" | _vastaus == "y")
                 {
-                    _saldo += _eurMaara;
+                    // Tarkistus nollaa alemman syötteen varalle. Vain positiivinen luku lisätään muuttujaan _saldo.
+                    Console.WriteLine("Kortille ladattava summa: ");
+                    _eurMaara = Convert.ToDouble(Console.ReadLine());
+                    if (_eurMaara >= 0)
+                    {
+                        _saldo += _eurMaara;
+                    }
+                    return LataaRahaa();
                 }
-                return LataaRahaa();
+            }
+            catch (Exception e) 
+            {
+                Console.WriteLine(e.Message);
             }
             return _saldo;
         }
