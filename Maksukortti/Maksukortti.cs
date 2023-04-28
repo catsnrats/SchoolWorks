@@ -11,6 +11,7 @@ namespace Maksukortti
     {
         private double _saldo, _eurMaara; // Private-muuttuja _saldo ja _eurMaara
         private string _vastaus; // Muuttuja käyttäjän syötteen vastaanottamiseen
+        
         public Maksukortti(double saldo) // Konstruktori desimaalimuuttujalla
         {
             _saldo = saldo;
@@ -37,9 +38,10 @@ namespace Maksukortti
                 Console.WriteLine("Ruokatilaus ei onnistu. Kortilla ei ole riittävästi rahaa.");
             }
         }
-        public double LataaRahaa() // Kysyy käyttäjältä _saldo-muuttujaan lisättävän summan
+        public double LataaRahaa(string msg) // Kysyy käyttäjältä _saldo-muuttujaan lisättävän summan
         {
-            Console.WriteLine("Ladataanko kortille rahaa? (Y/N) ");
+            Console.WriteLine(msg); // msg-muuttujalle on räätälöity viesti LataaRahaa()-kutsussa
+            //Console.WriteLine("Ladataanko kortille rahaa? (Y/N) ");
             _vastaus = Console.ReadLine();
 
             /* Kun käyttäjän vastaus on "Y" tai "y", kysytään latauskysymys uudestaan ja lisätään
@@ -56,7 +58,7 @@ namespace Maksukortti
                     {
                         _saldo += _eurMaara;
                     }
-                    return LataaRahaa();
+                    return LataaRahaa(msg);
                 }
             }
             catch (Exception e) 
