@@ -76,8 +76,8 @@ namespace Elaimet
             ciaCat.AsetaKissanNimi(cat_name);
             Console.WriteLine("Kissan nimi on: " + ciaCat.nimi);
 
-            Console.WriteLine("\nToString()-metodilla katti-olion tiedot:");
-            Console.WriteLine(katti); // Käyttää metodia ToString() katti-olion tietojen tulostamiseen
+            Console.WriteLine("\nToString()-metodilla olion tiedot:");
+            Console.WriteLine(ciaCat); // Käyttää metodia ToString() katti-olion tietojen tulostamiseen
 
             Console.Read();
         }

@@ -67,7 +67,7 @@ namespace Elaimet
         }
         public override string ToString() // ToString()-metodi olion kenttien tulostamiseen
         {
-            return "Kissa: " + nimi + " ikä " + ika;
+            return "Kissa: " + PalautaKissanNimi() + " ikä " + PalautaKissanIka();
         }
     } 
 }
