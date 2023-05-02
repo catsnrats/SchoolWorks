@@ -55,7 +55,8 @@ namespace Elaimet
             // Uusi Kissa-luokasta johdettu olio käyttäen parametrillista konstruktoria
             Kissa katti = new Kissa();
             // Tulostetaan katti-olion nimi ja ika
-            Console.WriteLine("Kissa: " + katti.nimi + ", " + katti.Ika + "-vuotta. \n");
+            //Console.WriteLine("Kissa: " + katti.nimi + ", " + katti.Ika + "-vuotta. \n");
+            Console.WriteLine(katti);
             
             // Kokeilee AsetaKissanIka-metodia uuden Kissa-luokan olion kera
             Console.WriteLine("Tehtävä: Kissa-luokan arvon palauttaminen:"); // Seloste tehtävän selkeyttämiseksi
