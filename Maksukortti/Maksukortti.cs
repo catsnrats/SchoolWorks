@@ -70,7 +70,7 @@ namespace Maksukortti
 
         public override string ToString() // Palauttaa mm. _saldo-muuttujan muodossa merkkijono
         {
-            return "Kortilla on rahaa " + _saldo + " euroa.";
+            return _saldo + " euroa.";
         }
     }
 }
