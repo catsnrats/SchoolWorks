@@ -53,7 +53,7 @@ namespace Elaimet
             Console.WriteLine("Kissa: " + feralCat.PalautaKissanNimi() + ", " + feralCat.PalautaKissanIka() + "-vuotta.");
 
             // Uusi Kissa-luokasta johdettu olio käyttäen parametrillista konstruktoria
-            Kissa katti = new Kissa("Karvinen", 2);
+            Kissa katti = new Kissa("Scully its me", 2);
             // Tulostetaan katti-olion nimi ja ika
             Console.WriteLine("Kissa: " + katti.nimi + ", " + katti.Ika + "-vuotta. \n");
             
@@ -64,9 +64,9 @@ namespace Elaimet
             Console.WriteLine("Kissa: " + ciaCat.nimi + ", " + ciaCat.Ika + "-vuotta. \n");
 
             // Asetetaan Fox-kissalle uusi ikä (if-ehdon testaus)
-            Console.WriteLine("Nimi ei voi olla Hilda, eikä ikä negatiivinen.");
+            Console.WriteLine("(Nimi ei voi olla Hilda, eikä ikä negatiivinen.)");
             Console.WriteLine("Anna kissalle ikä:");
-            cat_age = int.Parse(Console.ReadLine()); // Kysytään käyttäjältä ikä kissalle
+            cat_age = Convert.ToInt32(Console.ReadLine()); // Kysytään käyttäjältä ikä kissalle
             ciaCat.AsetaKissanIka(cat_age);
             Console.WriteLine("Kissa: " + ciaCat.nimi + ", " + ciaCat.Ika + "-vuotta.");
 

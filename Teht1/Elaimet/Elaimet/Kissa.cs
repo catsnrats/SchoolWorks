@@ -45,7 +45,7 @@ namespace Elaimet
 
             if (aged(kissaIka, i)) // Käyttää aged-metodia iän vertaamiseen.
             {
-                Console.WriteLine("Kissan ikä ei voi olla negatiivinen.");
+                Console.WriteLine("Ikä ei voi olla negatiivinen.");
             }
             else
             {
@@ -57,7 +57,7 @@ namespace Elaimet
             set { ika = value; }
             get { return ika; }
         }
-        static bool aged(int kissaIka, int i) // Palauttaa boolean tiedon jos muutos ei toteudu
+        static bool aged(int kissaIka, int i) // Palauttaa boolean tiedon
         {
             return kissaIka < i;
         }
