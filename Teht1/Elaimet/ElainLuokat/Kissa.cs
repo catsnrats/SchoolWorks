@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Elaimet
 {
-    class Kissa
+    public class Kissa
     {
         // Attribuutit oliota varten
         private int ika = 0;
