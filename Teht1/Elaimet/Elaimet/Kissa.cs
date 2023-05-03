@@ -4,11 +4,10 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using ElainLuokat;
 
-namespace ElainLuokat
+namespace Elaimet
 {
-    public class Kissa
+    class Kissa
     {
         // Attribuutit oliota varten
         private int ika = 0;

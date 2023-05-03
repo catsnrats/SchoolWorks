@@ -4,7 +4,6 @@ using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
-using ElainLuokat;
 
 /**
   
@@ -20,7 +19,7 @@ using ElainLuokat;
   
    
 **/
-namespace ElainLuokat
+namespace Elaimet
 {
     public class Program
     {
