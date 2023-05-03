@@ -45,15 +45,15 @@ namespace Elaimet
 
             // Luodaan koira-luokasta olio. Nimetään koira, asetetaan ika ja tulostetaan nimi.
             Console.WriteLine("Tehtävä: koira-luokka ja -oliot:");
-            koira feralCat = new koira();
-            Console.WriteLine("koira: " + feralCat.nimi + ", " + feralCat.Ika + "-vuotta.");
+            Koira feralCat = new Koira();
+           // Console.WriteLine("koira: " + feralCat.nimi + ", " + feralCat.Ika + "-vuotta.");
 
             // Asetetaan feralCat-oliolle uusi nimi metodin avulla. Ja palautetaan aiemmin annettu ikä metodin avulla.
             feralCat.AsetakoiranNimi("Viipottaja");
             Console.WriteLine("koira: " + feralCat.PalautakoiranNimi() + ", " + feralCat.PalautakoiranIka() + "-vuotta.");
 
             // Uusi koira-luokasta johdettu olio käyttäen parametrillista konstruktoria
-            koira katti = new koira();
+            Koira katti = new Koira();
             // Tulostetaan katti-olion nimi ja ika
             //Console.WriteLine("koira: " + katti.nimi + ", " + katti.Ika + "-vuotta. \n");
             Console.WriteLine(katti);
@@ -61,24 +61,31 @@ namespace Elaimet
             // Kokeilee AsetakoiranIka-metodia uuden koira-luokan olion kera
             Console.WriteLine("Tehtävä: koira-luokan arvon palauttaminen:"); // Seloste tehtävän selkeyttämiseksi
             // Luodaan uusi olio parametreineen ja tulostetaan se
-            koira ciaCat = new koira("Fox", 7);
-            Console.WriteLine("koira: " + ciaCat.nimi + ", " + ciaCat.Ika + "-vuotta. \n");
+            Koira ciaCat = new Koira("Fox", 7);
+           // Console.WriteLine("koira: " + ciaCat.nimi + ", " + ciaCat.Ika + "-vuotta. \n");
 
             // Asetetaan Fox-koiralle uusi ikä (if-ehdon testaus)
-            Console.WriteLine("(Nimi ei voi olla Hilda, eikä ikä negatiivinen.)");
+            Console.WriteLine("(Nimi ei voi olla Musti, eikä ikä negatiivinen.)");
             Console.WriteLine("Anna koiralle ikä:");
             cat_age = Convert.ToInt32(Console.ReadLine()); // Kysytään käyttäjältä ikä koiralle
             ciaCat.AsetakoiranIka(cat_age);
-            Console.WriteLine("koira: " + ciaCat.nimi + ", " + ciaCat.Ika + "-vuotta.");
+          //  Console.WriteLine("koira: " + ciaCat.nimi + ", " + ciaCat.Ika + "-vuotta.");
 
             // Kysytään koiran nimi cat_name-muuttujaan
             Console.WriteLine("Anna koiralle uusi nimi: ");
             cat_name = Console.ReadLine(); 
             ciaCat.AsetakoiranNimi(cat_name);
-            Console.WriteLine("koiran nimi on: " + ciaCat.nimi);
+          //  Console.WriteLine("koiran nimi on: " + ciaCat.nimi);
 
             Console.WriteLine("\nToString()-metodilla olion tiedot:");
             Console.WriteLine(ciaCat); // Käyttää metodia ToString() katti-olion tietojen tulostamiseen
+
+            // Koira-tehtävän osuus
+            Console.WriteLine("\nUusi koira-olio.");
+            Koira samojedi = new Koira("MustI", 9);
+            //samojedi.AsetakoiranNimi("Musti");
+            Console.WriteLine(samojedi);
+            
 
             Console.Read();
         }

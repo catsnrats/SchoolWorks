@@ -7,24 +7,23 @@ using System.Threading.Tasks;
 
 namespace Elaimet
 {
-    public class koira
+    public class Koira
     {
         // Attribuutit oliota varten
         private int ika = 0;
-        public String nimi = "Haukkuli";
+        private string nimi = "Haukkuli";
         private string naNames = "Musti";
 
-        public koira() // Parametriton konstruktori
+        public Koira() // Parametriton konstruktori
         {
         }
-        public koira(String koiraNimi, int koiraIka) // Parametrillinen konstruktori
+        public Koira(string koiraNimi, int koiraIka) // Parametrillinen konstruktori
         {
             ika = koiraIka;
-            nimi = koiraNimi;
+            Nimi = koiraNimi;
         }
         public void AsetakoiranNimi(String koiraNimi) // Metodi olion nimeämiseen
         {
-            // String naNames = "Hilda";
             // Vertaa naNames-muuttujaa koiraNimi-muuttujaan välittämättä onko fontti iso vai pieni
             if (naNames.Equals(koiraNimi, StringComparison.OrdinalIgnoreCase))
             {
@@ -56,6 +55,20 @@ namespace Elaimet
         {
             set { ika = value; }
             get { return ika; }
+        }
+        public string Nimi // Kokeiltu get ja set -tapaa nimikentän tarkistukseen. ( ei voi olla Musti )
+        {
+            set {
+                if (value == "Musti") // Jos nimi-kenttään kirjoittaa "Musti", asettaa kentän arvoksi "Haukkuli".
+                {
+                    nimi = "Haukkuli";
+                }
+                else 
+                {
+                    nimi = value;
+                }
+            }
+            get { return nimi; }
         }
         static bool aged(int koiraIka, int i) // Palauttaa boolean tiedon
         {
