@@ -82,7 +82,7 @@ namespace Elaimet
 
             // Koira-tehtävän osuus
             Console.WriteLine("\nUusi koira-olio.");
-            Koira samojedi = new Koira("MustI", 9);
+            Koira samojedi = new Koira("Musti", 9);
             //samojedi.AsetakoiranNimi("Musti");
             Console.WriteLine(samojedi);
             
