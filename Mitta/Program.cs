@@ -10,10 +10,7 @@ namespace Mitta
     {
         static void Main(string[] args)
         {
-<<<<<<< HEAD
-            Mittari mittari = new Mittari();
 
-            Console.ReadLine();
 =======
             Mittari mittari = new Mittari(); // Luodaan olio nimeltä mittari
 

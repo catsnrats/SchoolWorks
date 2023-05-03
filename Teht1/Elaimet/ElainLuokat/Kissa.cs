@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Elaimet
 {
-    class Kissa
+    public class Kissa
     {
         // Attribuutit oliota varten
         private int ika = 0;
@@ -64,6 +64,10 @@ namespace Elaimet
         public int PalautaKissanIka() // Metodi olion ika-muuttujan palauttamiseen
         {
             return ika;
+        }
+        public override string ToString() // ToString()-metodi olion kenttien tulostamiseen
+        {
+            return "Kissa: " + PalautaKissanNimi() + " ikä " + PalautaKissanIka();
         }
     } 
 }
