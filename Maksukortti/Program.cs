@@ -19,8 +19,8 @@ namespace Maksukortti
             Console.WriteLine(kortti);*/
 
             // Alla tehtävän Matti ja Pekka osuus. LataaRahaa()-metodissa ollut oletusviesti korvattu
-            Maksukortti pekanKortti = new Maksukortti(20);
-            Maksukortti matinKortti = new Maksukortti(30);
+            Maksukortti pekanKortti = new Maksukortti(5);
+            Maksukortti matinKortti = new Maksukortti(5);
             pekanKortti.SyoMaukkaasti();
             Console.WriteLine($"Pekan saldo: {pekanKortti}");
             matinKortti.SyoEdullisesti();
