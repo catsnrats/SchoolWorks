@@ -13,9 +13,12 @@ namespace Ika
         {
             int loopit = 10;
 
+            Random ika = new Random();
+
             for(int i = 0; i < loopit; i++)
             {
-                Console.WriteLine(i);
+               // Console.WriteLine(i);
+                Console.WriteLine(ika.Next(1, 12));
             }
             Console.Read();
         }
