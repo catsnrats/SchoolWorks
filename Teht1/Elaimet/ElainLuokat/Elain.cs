@@ -1,27 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ElainLuokat
 {
-    internal class Elain
+    public class Elain
     { 
+        // Elain-luokka luotu pääluokaksi
         private int _ika = 0;
-        public string nimi = "";
-        public bool onLihanSyoja = true;
+        private string _nimi = "";
+        public bool onLihanSyoja;
     
         public Elain()
         { }
         public Elain(string elainNimi, int elainIka)
         {
             _ika = elainIka;
-            nimi = elainNimi;
+            _nimi = elainNimi;
         }
         public void AsetaElaimenNimi(string elainNimi)
-        { }
-        public void AsetaKissanIka(int elainIka)
+        {
+            _nimi = elainNimi;
+        }
+        public void AsetaElaimenIka(int elainIka)
         {
             if (elainIka < 0)
             {
@@ -32,9 +36,9 @@ namespace ElainLuokat
                 _ika = elainIka;
             }
         }
-        public bool AsetaOnLihanSyoja()
+        public void AsetaOnLihanSyoja(bool tosi)
         {
-            return onLihanSyoja;
+            onLihanSyoja = tosi;
         }
         public int PalautaElaimenIka() // Metodi olion ika-muuttujan palauttamiseen
         {
@@ -42,11 +46,18 @@ namespace ElainLuokat
         }
         public string PalautaElaimenNimi() // Metodi olion nimi-merkkijonon palauttamiseen
         {
-            return nimi;
+            return _nimi;
         }
-        public bool PalautaOnLihanSyoja()
+        public string PalautaOnLihanSyoja() // Palauttaa onLihanSyoja arvon tekstinä
         {
-            return onLihanSyoja;
+            if (onLihanSyoja)
+            {
+                return "On lihansyöjä.";
+            }
+            else 
+            {
+                return "Ei syö lihaa";
+            }
         }
     }
 }
