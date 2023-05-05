@@ -46,7 +46,6 @@ namespace Elaimet
             // Luodaan koira-luokasta olio. Nimetään koira, asetetaan ika ja tulostetaan nimi.
             Console.WriteLine("Tehtävä: koira-luokka ja -oliot:");
             Koira feralCat = new Koira();
-           // Console.WriteLine("koira: " + feralCat.nimi + ", " + feralCat.Ika + "-vuotta.");
 
             // Asetetaan feralCat-oliolle uusi nimi metodin avulla. Ja palautetaan aiemmin annettu ikä metodin avulla.
             feralCat.AsetakoiranNimi("Viipottaja");
@@ -54,39 +53,32 @@ namespace Elaimet
 
             // Uusi koira-luokasta johdettu olio käyttäen parametrillista konstruktoria
             Koira katti = new Koira();
-            // Tulostetaan katti-olion nimi ja ika
-            //Console.WriteLine("koira: " + katti.nimi + ", " + katti.Ika + "-vuotta. \n");
             Console.WriteLine(katti);
             
             // Kokeilee AsetakoiranIka-metodia uuden koira-luokan olion kera
-            Console.WriteLine("Tehtävä: koira-luokan arvon palauttaminen:"); // Seloste tehtävän selkeyttämiseksi
+            Console.WriteLine("Tehtävä: koira-luokan arvon palauttaminen:"); 
             // Luodaan uusi olio parametreineen ja tulostetaan se
             Koira ciaCat = new Koira("Fox", 7);
-           // Console.WriteLine("koira: " + ciaCat.nimi + ", " + ciaCat.Ika + "-vuotta. \n");
 
             // Asetetaan Fox-koiralle uusi ikä (if-ehdon testaus)
             Console.WriteLine("(Nimi ei voi olla Musti, eikä ikä negatiivinen.)");
             Console.WriteLine("Anna koiralle ikä:");
             cat_age = Convert.ToInt32(Console.ReadLine()); // Kysytään käyttäjältä ikä koiralle
             ciaCat.AsetakoiranIka(cat_age);
-          //  Console.WriteLine("koira: " + ciaCat.nimi + ", " + ciaCat.Ika + "-vuotta.");
 
             // Kysytään koiran nimi cat_name-muuttujaan
             Console.WriteLine("Anna koiralle uusi nimi: ");
             cat_name = Console.ReadLine(); 
             ciaCat.AsetakoiranNimi(cat_name);
-          //  Console.WriteLine("koiran nimi on: " + ciaCat.nimi);
 
             Console.WriteLine("\nToString()-metodilla olion tiedot:");
-            Console.WriteLine(ciaCat); // Käyttää metodia ToString() katti-olion tietojen tulostamiseen
+            Console.WriteLine(ciaCat);
 
             // Koira-tehtävän osuus
             Console.WriteLine("\nUusi koira-olio.");
             Koira samojedi = new Koira("Musti", 9);
-            //samojedi.AsetakoiranNimi("Musti");
             Console.WriteLine(samojedi);
             
-
             Console.Read();
         }
     }
