@@ -41,7 +41,6 @@ namespace Maksukortti
         public double LataaRahaa(string msg) // Kysyy käyttäjältä _saldo-muuttujaan lisättävän summan
         {
             Console.WriteLine(msg); // msg-muuttujalle on räätälöity viesti LataaRahaa()-kutsussa
-            //Console.WriteLine("Ladataanko kortille rahaa? (Y/N) ");
             _vastaus = Console.ReadLine();
 
             /* Kun käyttäjän vastaus on "Y" tai "y", kysytään latauskysymys uudestaan ja lisätään
