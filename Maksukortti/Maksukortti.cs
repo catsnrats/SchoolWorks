@@ -53,7 +53,7 @@ namespace Maksukortti
                     // Tarkistus nollaa alemman syötteen varalle. Vain positiivinen luku lisätään muuttujaan _saldo.
                     Console.WriteLine("Kortille ladattava summa: ");
                     _eurMaara = Convert.ToDouble(Console.ReadLine());
-                    if (_eurMaara >= 0)
+                    if (_eurMaara > 0)
                     {
                         _saldo += _eurMaara;
                     }
