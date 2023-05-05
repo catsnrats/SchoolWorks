@@ -11,20 +11,19 @@ namespace Elaimet
     {
         // Attribuutit oliota varten
         private int ika = 0;
-        public String nimi = "Miuku";
+        public string nimi = "Miuku";
         private string naNames = "Hilda";
 
         public Kissa() // Parametriton konstruktori
         {
         }
-        public Kissa(String kissaNimi, int kissaIka) // Parametrillinen konstruktori
+        public Kissa(string kissaNimi, int kissaIka) // Parametrillinen konstruktori
         {
             ika = kissaIka;
             nimi = kissaNimi;
         }
-        public void AsetaKissanNimi(String kissaNimi) // Metodi olion nimeämiseen
+        public void AsetaKissanNimi(string kissaNimi) // Metodi olion nimeämiseen
         {
-            // String naNames = "Hilda";
             // Vertaa naNames-muuttujaa kissaNimi-muuttujaan välittämättä onko fontti iso vai pieni
             if (naNames.Equals(kissaNimi, StringComparison.OrdinalIgnoreCase))
             {
@@ -35,7 +34,7 @@ namespace Elaimet
                 nimi = kissaNimi;
             }
         }
-        public String PalautaKissanNimi() // Metodi olion nimi-merkkijonon palauttamiseen
+        public string PalautaKissanNimi() // Metodi olion nimi-merkkijonon palauttamiseen
         {
             return nimi;
         }

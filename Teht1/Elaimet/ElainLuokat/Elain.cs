@@ -10,7 +10,7 @@ namespace ElainLuokat
     { 
         private int _ika = 0;
         public string nimi = "";
-        bool onLihanSyoja = true;
+        public bool onLihanSyoja = true;
     
         public Elain()
         { }
@@ -31,6 +31,10 @@ namespace ElainLuokat
             {
                 _ika = elainIka;
             }
+        }
+        public bool AsetaOnLihanSyoja()
+        {
+            return onLihanSyoja;
         }
         public int PalautaElaimenIka() // Metodi olion ika-muuttujan palauttamiseen
         {
