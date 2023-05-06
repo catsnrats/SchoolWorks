@@ -36,9 +36,9 @@ namespace ElainLuokat
                 _ika = elainIka;
             }
         }
-        public void AsetaOnLihanSyoja(bool tosi)
+        public void AsetaOnLihanSyoja(bool vastaus)
         {
-            onLihanSyoja = tosi;
+            onLihanSyoja = vastaus;
         }
         public int PalautaElaimenIka() // Metodi olion ika-muuttujan palauttamiseen
         {

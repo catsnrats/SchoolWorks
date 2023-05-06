@@ -38,6 +38,17 @@ namespace Elaimet
             Console.WriteLine(kolli.PalautaOnLihanSyoja());
             
             kolli.Kehraa();
+            Console.WriteLine();
+
+            // Koira luokasta johdettu olio...
+            Koira hurtta = new Koira();
+            hurtta.AsetaOnLihanSyoja(true);
+            hurtta.AsetaElaimenNimi("Hurtta");
+            hurtta.AsetaElaimenIka(6);
+
+            Console.WriteLine($"Koiran nimi on {hurtta.PalautaElaimenNimi()}");
+            Console.WriteLine($"Koiran ikä on {hurtta.PalautaElaimenIka()}-v.");
+            Console.WriteLine(hurtta.PalautaOnLihanSyoja());
            
             Console.Read();
         }
