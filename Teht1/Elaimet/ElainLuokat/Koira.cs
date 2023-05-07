@@ -8,9 +8,13 @@ using System.Threading.Tasks;
 
 namespace Elaimet
 {
-    public class Koira : Elain
+    public class Koira : Elain // Koira-luokka perii Elain-luokan
     {
         public string haukku = "Hau!Hau!";
-        
+
+        // Konstruktori perii parametrit Elain-luokasta
+        public Koira(string elainNimi, int elainIka) : base(elainNimi, elainIka) 
+        {
+        }
     } 
 }

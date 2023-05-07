@@ -10,20 +10,21 @@ namespace ElainLuokat
     public class Elain
     { 
         // Elain-luokka luotu pääluokaksi
-        private int _ika = 0;
-        private string _nimi = "";
+        public int ika = 0;
+        public string nimi = "";
         public bool onLihanSyoja;
     
         public Elain()
         { }
         public Elain(string elainNimi, int elainIka)
         {
-            _ika = elainIka;
-            _nimi = elainNimi;
+            ika = elainIka;
+            nimi = elainNimi;
         }
+        // Alla luokan metodit (ikä ei voi olla negatiivinen)
         public void AsetaElaimenNimi(string elainNimi)
         {
-            _nimi = elainNimi;
+            nimi = elainNimi;
         }
         public void AsetaElaimenIka(int elainIka)
         {
@@ -33,7 +34,7 @@ namespace ElainLuokat
             }
             else
             {
-                _ika = elainIka;
+                ika = elainIka;
             }
         }
         public void AsetaOnLihanSyoja(bool vastaus)
@@ -42,13 +43,13 @@ namespace ElainLuokat
         }
         public int PalautaElaimenIka() // Metodi olion ika-muuttujan palauttamiseen
         {
-            return _ika;
+            return ika;
         }
         public string PalautaElaimenNimi() // Metodi olion nimi-merkkijonon palauttamiseen
         {
-            return _nimi;
+            return nimi;
         }
-        public string PalautaOnLihanSyoja() // Palauttaa onLihanSyoja arvon tekstinä
+        public string PalautaOnLihanSyoja() // Palauttaa onLihanSyoja arvon tekstinä riippuen onLihanSyoja arvosta
         {
             if (onLihanSyoja)
             {

@@ -26,10 +26,11 @@ namespace Elaimet
     {
         static void Main(string[] args)
         {
-            // Jatkettu periytymistehtävään: Kissa luokasta johdetulla kolli-oliolla käytetty Elain-luokan metodeja
+            // Jatkettu periytymistehtävään: Olioilla käytetty Elain-luokan metodeja
+            // AsetaOnLihanSyoja metodille voi asettaa bool arvon true tai false
             Kissa kolli = new Kissa();
 
-            kolli.AsetaOnLihanSyoja(false);
+            kolli.AsetaOnLihanSyoja(false); // Kutsuu boolean metodia asettaen arvon false
             kolli.AsetaElaimenNimi("Kaapo");
             kolli.AsetaElaimenIka(3);
 
@@ -41,7 +42,7 @@ namespace Elaimet
             Console.WriteLine();
 
             // Koira luokasta johdettu olio...
-            Koira hurtta = new Koira();
+            Koira hurtta = new Koira("", 0);
             hurtta.AsetaOnLihanSyoja(true);
             hurtta.AsetaElaimenNimi("Hurtta");
             hurtta.AsetaElaimenIka(6);
@@ -49,7 +50,13 @@ namespace Elaimet
             Console.WriteLine($"Koiran nimi on {hurtta.PalautaElaimenNimi()}");
             Console.WriteLine($"Koiran ikä on {hurtta.PalautaElaimenIka()}-v.");
             Console.WriteLine(hurtta.PalautaOnLihanSyoja());
-           
+
+            Console.WriteLine();
+            Koira samo = new Koira("Tassu", 9); // Asetettu olion parametrit ilman metodeja
+            Console.WriteLine($"Koiran ikä ja nimi: {samo.ika}-vuotias {samo.nimi}");
+            samo.AsetaOnLihanSyoja(true);
+            Console.WriteLine(hurtta.PalautaOnLihanSyoja());
+
             Console.Read();
         }
     }
