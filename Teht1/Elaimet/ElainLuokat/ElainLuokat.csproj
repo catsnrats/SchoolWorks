@@ -47,6 +47,9 @@
     <Compile Include="Hevonen.cs" />
     <Compile Include="Koira.cs" />
     <Compile Include="Kissa.cs" />
+    <Compile Include="Linnut.cs" />
+    <Compile Include="Nisakkaat.cs" />
+    <Compile Include="Papukaija.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
