@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.NetworkInformation;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,7 +23,7 @@ using System.Threading.Tasks;
 **/
 namespace Elaimet
 {
-    public class Program
+    class Program
     {
         static void Main(string[] args)
         {
@@ -46,7 +47,7 @@ namespace Elaimet
             Koira hurtta = new Koira();
             hurtta.AsetaOnLihanSyoja(true);
             hurtta.AsetaElaimenNimi("Hurtta");
-            hurtta.AsetaElaimenIka(6);
+            hurtta.AsetaElaimenIka(6);           
 
             Console.WriteLine($"Koiran nimi on {hurtta.PalautaElaimenNimi()}");
             Console.WriteLine($"Koiran ikä on {hurtta.PalautaElaimenIka()}-v.");
@@ -54,8 +55,7 @@ namespace Elaimet
             hurtta.Aantele();
 
             Console.WriteLine();
-            Nisakkaat nisa = new Nisakkaat();
-            nisa.Aantele();
+           
             /*Koira samo = new Koira(); // Asetettu olion parametrit ilman metodeja
             Console.WriteLine($"Koiran ikä ja nimi: {samo.ika}-vuotias {samo.nimi}");
             samo.AsetaOnLihanSyoja(true);

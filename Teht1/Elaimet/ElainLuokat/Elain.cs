@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Elaimet
 {
-    public class Elain
+    public abstract class Elain
     { 
         // Elain-luokka luotu pääluokaksi
         public int ika = 0;
