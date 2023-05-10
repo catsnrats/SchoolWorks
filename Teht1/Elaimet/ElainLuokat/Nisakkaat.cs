@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Elaimet
 {
-    internal class Nisakkaat : Elain
+    public class Nisakkaat : Elain
     {
+        public override void Aantele()
+        {
+            Console.WriteLine("Määkii!");
+        }
     }
 }

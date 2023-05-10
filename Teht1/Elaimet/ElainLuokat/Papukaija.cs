@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Elaimet
 {
-    internal class Papukaija : Linnut
+    class Papukaija : Linnut
     {
     }
 }

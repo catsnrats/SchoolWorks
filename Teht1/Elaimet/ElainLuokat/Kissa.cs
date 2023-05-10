@@ -9,11 +9,15 @@ using System.Threading.Tasks;
 
 namespace Elaimet
 {
-    public class Kissa : Elain // Kissa-luokka perii Elain-luokan metodit
+    public class Kissa : Nisakkaat // Kissa-luokka perii Elain-luokan metodit
     {
         public void Kehraa()
         {
             Console.WriteLine("Hrrrrr hrrr");
+        }
+        public override void Aantele()
+        {
+            Console.WriteLine("Miau!");
         }
     } 
 }

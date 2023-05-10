@@ -60,5 +60,9 @@ namespace Elaimet
                 return "Ei syö lihaa";
             }
         }
+        public virtual void Aantele()
+        {
+            Console.WriteLine("Umph!");
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ElainLuokat
 {
-    internal class Linnut
+    abstract class Linnut
     {
     }
 }
