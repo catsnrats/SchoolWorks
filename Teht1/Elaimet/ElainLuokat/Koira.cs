@@ -15,9 +15,9 @@ namespace Elaimet
             Console.WriteLine("Hau!Hau!");
         }
 
-        // Konstruktori perii parametrit Elain-luokasta
-        /*public Koira(string elainNimi, int elainIka) : base(elainNimi, elainIka) 
+        // Konstruktori perii parametrit Nisakkaat-luokasta
+        public Koira(string elainNimi, int elainIka) : base(elainNimi, elainIka) 
         {
-        }*/
+        }
     } 
 }

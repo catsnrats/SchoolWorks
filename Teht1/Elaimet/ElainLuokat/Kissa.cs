@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Elaimet
 {
-    public class Kissa : Nisakkaat // Kissa-luokka perii Elain-luokan metodit
+    public class Kissa : Nisakkaat // Kissa-luokka perii Nisakkaat-luokan metodit
     {
         public void Kehraa()
         {

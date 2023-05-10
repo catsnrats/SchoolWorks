@@ -44,7 +44,7 @@ namespace Elaimet
             Console.WriteLine();
 
             // Koira luokasta johdettu olio...
-            Koira hurtta = new Koira();
+            Koira hurtta = new Koira("", 0);
             hurtta.AsetaOnLihanSyoja(true);
             hurtta.AsetaElaimenNimi("Hurtta");
             hurtta.AsetaElaimenIka(6);           
@@ -56,10 +56,10 @@ namespace Elaimet
 
             Console.WriteLine();
            
-            /*Koira samo = new Koira(); // Asetettu olion parametrit ilman metodeja
+            Koira samo = new Koira("Tassu", 6); // Asetettu olion parametrit ilman metodeja
             Console.WriteLine($"Koiran ikä ja nimi: {samo.ika}-vuotias {samo.nimi}");
             samo.AsetaOnLihanSyoja(true);
-            Console.WriteLine(hurtta.PalautaOnLihanSyoja());*/
+            Console.WriteLine(hurtta.PalautaOnLihanSyoja());
 
             Console.Read();
         }
