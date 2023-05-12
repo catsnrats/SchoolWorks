@@ -23,7 +23,7 @@ using System.Threading.Tasks;
 **/
 namespace Elaimet
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -61,6 +61,12 @@ namespace Elaimet
             samo.AsetaOnLihanSyoja(true);
             Console.WriteLine(hurtta.PalautaOnLihanSyoja());
 
+            Console.WriteLine();
+
+            Papukaija lintu = new Papukaija();
+            lintu.AsetaLinnunNimi("Varis");
+            Console.WriteLine(lintu.PalautaOsaaPuhua());
+            
             Console.Read();
         }
     }
