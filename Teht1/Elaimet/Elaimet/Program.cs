@@ -63,7 +63,7 @@ namespace Elaimet
 
             Console.WriteLine();
 
-            Papukaija lintu = new Papukaija();
+            Papukaija lintu = new Papukaija("");
             lintu.AsetaLinnunNimi("Varis");
             Console.WriteLine(lintu.PalautaOsaaPuhua());
             

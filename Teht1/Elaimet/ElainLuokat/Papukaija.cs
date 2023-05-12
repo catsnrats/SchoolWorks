@@ -10,21 +10,12 @@ using System.Threading.Tasks;
 
 namespace Elaimet
 {
-    public class Papukaija
+    public class Papukaija : Linnut
     {
-        public bool osaaPuhua;
-        public string[] puhuvat = { "African Grey", "Indian Ringneck", "Quaker Parrot", "Budgies" };
-        public string lintu;
-        public Papukaija()
+        public Papukaija(string lintu) : base(lintu)
         {
-            
         }
-        public void AsetaLinnunNimi(string lintu)
-        {
-            this.lintu = lintu;
-        }
-
-        public string PalautaOsaaPuhua()
+        public string PalautaOsaaPuhua() // Metodissa verrataan linnulle annettua nimeä puhuvat-taulukkoon
         {
             if (puhuvat.Contains(lintu))
             {

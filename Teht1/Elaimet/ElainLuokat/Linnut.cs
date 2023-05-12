@@ -9,11 +9,15 @@ namespace ElainLuokat
 {
     public class Linnut
     {
-        
-        public string lintuja;
-        public Linnut(string lintuja) 
+        public string[] puhuvat = { "African Grey", "Indian Ringneck", "Quaker Parrot", "Budgies" }; // Taulukko puhuvista...
+        public string lintu;
+        public Linnut(string lintu) 
         {
-            this.lintuja = lintuja;
+            this.lintu = lintu;
+        }
+        public void AsetaLinnunNimi(string lintu)
+        {
+            this.lintu = lintu;
         }
     }
 }
