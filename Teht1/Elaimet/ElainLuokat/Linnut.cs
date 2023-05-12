@@ -7,17 +7,31 @@ using System.Threading.Tasks;
 
 namespace ElainLuokat
 {
-    public class Linnut
+    public abstract class Linnut
     {
-        public string[] puhuvat = { "African Grey", "Indian Ringneck", "Quaker Parrot", "Budgies" }; // Taulukko puhuvista...
+        public string[] puhuvat = { "African grey", "Indian ringneck", "Quaker parrot", "Budgerigar", "Monk", "Amazon parrot" }; // Taulukko puhuvista...
         public string lintu;
-        public Linnut(string lintu) 
+        public int ika;
+        public Linnut(string lintu, int ika)
         {
             this.lintu = lintu;
+            this.ika = ika;
         }
-        public void AsetaLinnunNimi(string lintu)
+        public void AsetaLinnunNimijaIka(string lintu, int ika)
         {
             this.lintu = lintu;
+            this.ika = ika;
+        }
+        public string PalautaOsaaPuhua() // Metodissa verrataan linnulle annettua nimeä puhuvat-taulukkoon
+        {
+            if (puhuvat.Contains(lintu))
+            {
+                return $"{ika}-vuotias {lintu} osaa matkia puhetta.";
+            }
+            else
+            {
+                return $"{ika}-vuotias {lintu} ei osaa matkia puhetta.";
+            }
         }
     }
 }

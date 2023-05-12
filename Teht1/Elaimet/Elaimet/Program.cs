@@ -63,10 +63,12 @@ namespace Elaimet
 
             Console.WriteLine();
 
-            Papukaija lintu = new Papukaija("");
-            lintu.AsetaLinnunNimi("Varis");
+            Papukaija lintu = new Papukaija("", 0);
+            lintu.AsetaLinnunNimijaIka("African grey", 8);
             Console.WriteLine(lintu.PalautaOsaaPuhua());
-            
+            lintu.AsetaLinnunNimijaIka("Harakka", 10);
+            Console.WriteLine(lintu.PalautaOsaaPuhua());
+
             Console.Read();
         }
     }

@@ -12,19 +12,8 @@ namespace Elaimet
 {
     public class Papukaija : Linnut
     {
-        public Papukaija(string lintu) : base(lintu)
+        public Papukaija(string lintu, int ika) : base(lintu, ika)
         {
-        }
-        public string PalautaOsaaPuhua() // Metodissa verrataan linnulle annettua nimeä puhuvat-taulukkoon
-        {
-            if (puhuvat.Contains(lintu))
-            {
-                return $"{lintu} osaa puhua.";
-            }
-            else
-            {
-                return $"{lintu} ei osaa puhua.";
-            }
         }
     }
 }
