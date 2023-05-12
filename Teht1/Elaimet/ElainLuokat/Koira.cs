@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Elaimet
 {
-    public class Koira : Nisakkaat // Koira-luokka perii Elain-luokan
+    public class Koira : Nisakkaat // Koira-luokka perii Nisakkaat-luokan
     {
         public override void Aantele()
         {
@@ -16,7 +16,7 @@ namespace Elaimet
         }
 
         // Konstruktori perii parametrit Nisakkaat-luokasta
-        public Koira(string elainNimi, int elainIka) : base(elainNimi, elainIka) 
+        public Koira(string nimi, int ika, string nisakas) : base(nimi, ika, nisakas) 
         {
         }
     } 

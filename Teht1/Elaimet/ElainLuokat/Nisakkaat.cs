@@ -10,12 +10,8 @@ namespace Elaimet
     {
         public Nisakkaat()
         { }
-        public Nisakkaat(string nisakas, int ika) : base(nisakas, ika)
+        public Nisakkaat(string nimi, int ika, string nisakas) : base(nimi, ika, nisakas)
         {
-        }
-        public override void Aantele()
-        {
-            Console.WriteLine("Määkii!");
         }
     }
 }

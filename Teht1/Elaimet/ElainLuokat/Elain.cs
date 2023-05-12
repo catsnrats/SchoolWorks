@@ -8,18 +8,22 @@ using System.Threading.Tasks;
 namespace Elaimet
 {
     public abstract class Elain
-    { 
+    {
         // Elain-luokka luotu pääluokaksi
         public int ika = 0;
-        public string nimi = "";
+        public string nimi;
+        public string nisakas;
         public bool onLihanSyoja;
-    
+        // Taulukko arvontaa varten
+        public string[] sudet = { "Himalayan wolf", "Arctic wolf", "Eurasian wolf", "Mongolian wolf", "Red wolf", "Tudra wolf", "Russian wolf", "Mexican wolf" };
+        Random susi = new Random();
         public Elain()
         { }
-        public Elain(string nimi, int ika)
+        public Elain(string nimi, int ika, string nisakas)
         {
             this.ika = ika;
             this.nimi= nimi;
+            this.nisakas = nisakas;
         }
         // Alla luokan metodit (ikä ei voi olla negatiivinen)
         public void AsetaElaimenNimi(string elainNimi)
@@ -40,6 +44,11 @@ namespace Elaimet
         public void AsetaOnLihanSyoja(bool vastaus)
         {
             onLihanSyoja = vastaus;
+        }
+        public string AsetaSudeksi(string nisakas) // Arpoo indeksin sudet[]-taulukosta ja palauttaa indeksin merkkijonon
+        {
+            int index = susi.Next(sudet.Length);
+            return sudet[index];
         }
         public int PalautaElaimenIka() // Metodi olion ika-muuttujan palauttamiseen
         {
