@@ -16,10 +16,10 @@ namespace Elaimet
     
         public Elain()
         { }
-        public Elain(string elainNimi, int elainIka)
+        public Elain(string nimi, int ika)
         {
-            ika = elainIka;
-            nimi = elainNimi;
+            this.ika = ika;
+            this.nimi= nimi;
         }
         // Alla luokan metodit (ikä ei voi olla negatiivinen)
         public void AsetaElaimenNimi(string elainNimi)

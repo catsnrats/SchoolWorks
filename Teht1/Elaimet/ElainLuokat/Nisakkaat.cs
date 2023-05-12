@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace Elaimet
 {
-    public abstract class Nisakkaat : Elain
+    public class Nisakkaat : Elain
     {
         public Nisakkaat()
         { }
-        public Nisakkaat(string nisakasNimi, int nisakasIka)
+        public Nisakkaat(string nisakas, int ika) : base(nisakas, ika)
         {
-            ika = nisakasIka;
-            nimi = nisakasNimi;
         }
         public override void Aantele()
         {

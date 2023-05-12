@@ -69,6 +69,10 @@ namespace Elaimet
             lintu.AsetaLinnunNimijaIka("Harakka", 10);
             Console.WriteLine(lintu.PalautaOsaaPuhua());
 
+            Console.WriteLine();
+
+            Nisakkaat kadelliset = new Nisakkaat();
+
             Console.Read();
         }
     }
