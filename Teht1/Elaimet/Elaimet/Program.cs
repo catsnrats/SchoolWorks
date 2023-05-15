@@ -63,8 +63,9 @@ namespace Elaimet
 
             Console.WriteLine();
 
+            // Alla tehtävän (4 luokkakaavio) oliot lintu ja susi
             Papukaija lintu = new Papukaija("", 0);
-            lintu.AsetaLinnunNimijaIka("African grey", 8);
+            lintu.AsetaLinnunNimijaIka("Monk", 8);
             Console.WriteLine(lintu.PalautaOsaaPuhua());
             lintu.AsetaLinnunNimijaIka("Harakka", 10);
             Console.WriteLine(lintu.PalautaOsaaPuhua());
