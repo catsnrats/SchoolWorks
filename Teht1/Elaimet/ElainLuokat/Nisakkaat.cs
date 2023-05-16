@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Elaimet
+namespace ElainLuokat
 {
     public abstract class Nisakkaat : Elain
     {

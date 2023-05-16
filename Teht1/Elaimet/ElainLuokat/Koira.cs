@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Elaimet
+namespace ElainLuokat
 {
     public class Koira : Nisakkaat // Koira-luokka perii Nisakkaat-luokan
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Elaimet
+namespace ElainLuokat
 {   //Esitellään luokka eli class. Koodi olisi voinut olla Program.cs tiedostossa mutta selkeyden takia luomme jokaisen luokan
     //omaan tiedostoonsa
     public class Hevonen : Nisakkaat

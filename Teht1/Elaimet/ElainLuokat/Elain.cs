@@ -5,7 +5,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Elaimet
+namespace ElainLuokat
 {
     public abstract class Elain
     {
@@ -13,8 +13,10 @@ namespace Elaimet
         public int ika = 0;
         public int paino;
         public string nimi;
+        public string lintu;
         public string nisakas;
         public bool onLihanSyoja;
+        public string[] puhuvat = { "African grey", "Indian ringneck", "Quaker parrot", "Budgerigar", "Monk", "Amazon parrot" }; // Taulukko matkivista...
         // Taulukko arvontaa varten
         public string[] sudet = { "Himalayan wolf", "Arctic wolf", "Eurasian wolf", "Mongolian wolf", "Red wolf", "Tudra wolf", "Russian wolf", "Mexican wolf" };
         Random susi = new Random();

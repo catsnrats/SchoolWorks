@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Elaimet
+namespace ElainLuokat
 {
     public class Kissa : Nisakkaat // Kissa-luokka perii Nisakkaat-luokan metodit
     {

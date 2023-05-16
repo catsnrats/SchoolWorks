@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace ElainLuokat
 {
-    public abstract class Linnut
+    public abstract class Linnut : Elain
     {
-        public string[] puhuvat = { "African grey", "Indian ringneck", "Quaker parrot", "Budgerigar", "Monk", "Amazon parrot" }; // Taulukko puhuvista...
-        public string lintu;
-        public int ika;
         public Linnut(string lintu, int ika)
         {
             this.lintu = lintu;
