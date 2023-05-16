@@ -11,6 +11,7 @@ namespace Elaimet
     {
         // Elain-luokka luotu pääluokaksi
         public int ika = 0;
+        public int paino;
         public string nimi;
         public string nisakas;
         public bool onLihanSyoja;

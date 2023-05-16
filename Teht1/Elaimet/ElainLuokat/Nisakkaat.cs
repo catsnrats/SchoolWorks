@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Elaimet
 {
-    public class Nisakkaat : Elain
+    public abstract class Nisakkaat : Elain
     {
         public Nisakkaat()
         { }
