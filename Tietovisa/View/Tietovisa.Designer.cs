@@ -37,6 +37,7 @@
             this.vaikeaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tietojaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suljeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testaaTietokantayhteysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonAnswer4 = new System.Windows.Forms.Button();
             this.buttonAnswer3 = new System.Windows.Forms.Button();
@@ -46,7 +47,7 @@
             this.labelInfo = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.labelAika = new System.Windows.Forms.Label();
-            this.testaaTietokantayhteysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonNewQuestion = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -114,6 +115,13 @@
             this.suljeToolStripMenuItem.Size = new System.Drawing.Size(297, 34);
             this.suljeToolStripMenuItem.Text = "&Sulje";
             this.suljeToolStripMenuItem.Click += new System.EventHandler(this.suljeToolStripMenuItem_Click);
+            // 
+            // testaaTietokantayhteysToolStripMenuItem
+            // 
+            this.testaaTietokantayhteysToolStripMenuItem.Name = "testaaTietokantayhteysToolStripMenuItem";
+            this.testaaTietokantayhteysToolStripMenuItem.Size = new System.Drawing.Size(297, 34);
+            this.testaaTietokantayhteysToolStripMenuItem.Text = "&Testaa tietokantayhteys";
+            this.testaaTietokantayhteysToolStripMenuItem.Click += new System.EventHandler(this.testaaTietokantayhteysToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -191,18 +199,21 @@
             this.labelAika.TabIndex = 4;
             this.labelAika.Text = "AIKA";
             // 
-            // testaaTietokantayhteysToolStripMenuItem
+            // buttonNewQuestion
             // 
-            this.testaaTietokantayhteysToolStripMenuItem.Name = "testaaTietokantayhteysToolStripMenuItem";
-            this.testaaTietokantayhteysToolStripMenuItem.Size = new System.Drawing.Size(297, 34);
-            this.testaaTietokantayhteysToolStripMenuItem.Text = "&Testaa tietokantayhteys";
-            this.testaaTietokantayhteysToolStripMenuItem.Click += new System.EventHandler(this.testaaTietokantayhteysToolStripMenuItem_Click);
+            this.buttonNewQuestion.Location = new System.Drawing.Point(745, 560);
+            this.buttonNewQuestion.Name = "buttonNewQuestion";
+            this.buttonNewQuestion.Size = new System.Drawing.Size(163, 63);
+            this.buttonNewQuestion.TabIndex = 5;
+            this.buttonNewQuestion.Text = "&Arvo kysymys";
+            this.buttonNewQuestion.UseVisualStyleBackColor = true;
             // 
             // Tietovisa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1045, 652);
+            this.Controls.Add(this.buttonNewQuestion);
             this.Controls.Add(this.labelAika);
             this.Controls.Add(this.labelInfo);
             this.Controls.Add(this.labelQuestion);
@@ -240,6 +251,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label labelAika;
         private System.Windows.Forms.ToolStripMenuItem testaaTietokantayhteysToolStripMenuItem;
+        private System.Windows.Forms.Button buttonNewQuestion;
     }
 }
 
