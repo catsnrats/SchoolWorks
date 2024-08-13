@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Answer.cs" />
     <Compile Include="Model\DatabaseControl.cs" />
     <Compile Include="Model\Question.cs" />
     <Compile Include="View\Tietovisa.cs">
