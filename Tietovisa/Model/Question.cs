@@ -6,7 +6,7 @@
         public string QuestionText { get; set; }
         public string Category { get; set; }
 
-        public Question() { }
+        public Question() { } // konstruktorit (default ja parametrillinen)
 
         public Question(int id, string questionText, string category)
         {

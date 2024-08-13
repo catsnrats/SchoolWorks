@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using Tietovisa.Model;
 
@@ -35,6 +36,12 @@ namespace Tietovisa
             {
                 MessageBox.Show("Failed to connect to the database.", "Connection Test", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        // painike pelin aloitukseen ja pelin aikaiseen uuden kysymyksen arvontaan
+        private void buttonNewQuestion_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
