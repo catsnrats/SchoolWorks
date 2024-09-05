@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -31,6 +32,44 @@ namespace Tietovisa.Model
             {
                 dbConn.Close();
             }
+        }
+
+        // Hakee kysymykset listaan -> listalta arvotaan kysymys napilla 'buttonNewQuestion_Click' (Tietovisa.cs)
+        public List<Question> GetAllQuestions() 
+        {
+            List<Question> questions = new List<Question>();
+
+            using (SqlConnection connection = new SqlConnection(connString))
+            {
+                string query = "SELECT id, question_text, category FROM questions";
+                SqlCommand command = new SqlCommand(query, connection);
+
+                try 
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Question question = new Question
+                        {
+                            Id = reader.GetInt32(0),
+                            QuestionText = reader.GetString(1),
+                            Category = reader.GetString(2)
+                        };
+
+                        questions.Add(question);
+                    }
+
+                    reader.Close();
+                }
+                catch (Exception e) 
+                {
+                    MessageBox.Show(e.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            return questions;
         }
     }
 }
