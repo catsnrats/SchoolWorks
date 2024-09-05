@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Drawing;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using Tietovisa.Model;
 
@@ -7,6 +8,9 @@ namespace Tietovisa
 {
     public partial class Tietovisa : Form
     {
+        private List<Question> questions;
+        private Random random = new Random();
+
         public Tietovisa()
         {
             InitializeComponent();
@@ -41,7 +45,29 @@ namespace Tietovisa
         // painike pelin aloitukseen ja pelin aikaiseen uuden kysymyksen arvontaan
         private void buttonNewQuestion_Click(object sender, EventArgs e)
         {
+            if (questions == null || !questions.Any())
+            {
+                DatabaseControl dbControl = new DatabaseControl();
+                questions = dbControl.GetAllQuestions();
 
+                if (questions == null || !questions.Any())
+                { 
+                    MessageBox.Show("No questions available", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+
+            // arpoo kysymyksen
+            Question drawnQuestion = DrawRandomQuestion();
+
+            // näyttää kysymyksen tekstikentässä
+            labelQuestion.Text = drawnQuestion.QuestionText;
+        }
+
+        private Question DrawRandomQuestion()
+        {
+            int index = random.Next(questions.Count);
+            return questions[index];
         }
     }
 }
