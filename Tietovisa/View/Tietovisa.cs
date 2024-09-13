@@ -45,7 +45,7 @@ namespace Tietovisa
         // painike pelin aloitukseen ja pelin aikaiseen uuden kysymyksen arvontaan
         private void buttonNewQuestion_Click(object sender, EventArgs e)
         {
-            if (questions == null || !questions.Any())
+            if (questions == null)
             {
                 DatabaseControl dbControl = new DatabaseControl();
                 questions = dbControl.GetAllQuestions();
@@ -57,11 +57,21 @@ namespace Tietovisa
                 }
             }
 
+            // tarkistaa onko kysymyksiä jäljellä...
+            if (questions.Count == 0)
+            {
+                MessageBox.Show("All questions have been asked!", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             // arpoo kysymyksen
             Question drawnQuestion = DrawRandomQuestion();
 
             // näyttää kysymyksen tekstikentässä
             labelQuestion.Text = drawnQuestion.QuestionText;
+
+            // estää saman kysymyksen arvonnan toistamiseen ?
+            questions.Remove(drawnQuestion);
         }
 
         private Question DrawRandomQuestion()
