@@ -9,7 +9,7 @@ namespace Tietovisa
     public partial class Tietovisa : Form
     {
         private List<Question> questions;
-        private Random random = new Random();
+        private readonly Random random = new Random();
 
         public Tietovisa()
         {
@@ -21,12 +21,12 @@ namespace Tietovisa
 
         }
 
-        private void suljeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SuljeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void testaaTietokantayhteysToolStripMenuItem_Click(object sender, EventArgs e) // DB-testi
+        private void TestaaTietokantayhteysToolStripMenuItem_Click(object sender, EventArgs e) // DB-testi
         {
             DatabaseControl dbControl = new DatabaseControl(); // DatabaseControl instanssi
 
@@ -43,7 +43,7 @@ namespace Tietovisa
         }
 
         // painike pelin aloitukseen ja pelin aikaiseen uuden kysymyksen arvontaan
-        private void buttonNewQuestion_Click(object sender, EventArgs e)
+        private void ButtonNewQuestion_Click(object sender, EventArgs e)
         {
             if (questions == null)
             {

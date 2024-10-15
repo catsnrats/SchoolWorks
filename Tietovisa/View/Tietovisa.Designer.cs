@@ -60,8 +60,7 @@
             this.tiedostoValikko});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(975, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(975, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -84,41 +83,41 @@
             this.vaikeaToolStripMenuItem});
             this.tasoValikko.Font = new System.Drawing.Font("Arial", 10.25F);
             this.tasoValikko.Name = "tasoValikko";
-            this.tasoValikko.Size = new System.Drawing.Size(295, 34);
+            this.tasoValikko.Size = new System.Drawing.Size(352, 34);
             this.tasoValikko.Text = "&Difficulty";
             // 
             // helppoToolStripMenuItem
             // 
             this.helppoToolStripMenuItem.Name = "helppoToolStripMenuItem";
-            this.helppoToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.helppoToolStripMenuItem.Size = new System.Drawing.Size(226, 34);
             this.helppoToolStripMenuItem.Text = "&Easy";
             // 
             // keskitasoToolStripMenuItem
             // 
             this.keskitasoToolStripMenuItem.Name = "keskitasoToolStripMenuItem";
-            this.keskitasoToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.keskitasoToolStripMenuItem.Size = new System.Drawing.Size(226, 34);
             this.keskitasoToolStripMenuItem.Text = "&Intermediate";
             // 
             // vaikeaToolStripMenuItem
             // 
             this.vaikeaToolStripMenuItem.Name = "vaikeaToolStripMenuItem";
-            this.vaikeaToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.vaikeaToolStripMenuItem.Size = new System.Drawing.Size(226, 34);
             this.vaikeaToolStripMenuItem.Text = "&Hard";
             // 
             // tietojaToolStripMenuItem
             // 
             this.tietojaToolStripMenuItem.Font = new System.Drawing.Font("Arial", 10.25F);
             this.tietojaToolStripMenuItem.Name = "tietojaToolStripMenuItem";
-            this.tietojaToolStripMenuItem.Size = new System.Drawing.Size(295, 34);
+            this.tietojaToolStripMenuItem.Size = new System.Drawing.Size(352, 34);
             this.tietojaToolStripMenuItem.Text = "&Info";
             // 
             // suljeToolStripMenuItem
             // 
             this.suljeToolStripMenuItem.Font = new System.Drawing.Font("Arial", 10.25F);
             this.suljeToolStripMenuItem.Name = "suljeToolStripMenuItem";
-            this.suljeToolStripMenuItem.Size = new System.Drawing.Size(295, 34);
+            this.suljeToolStripMenuItem.Size = new System.Drawing.Size(352, 34);
             this.suljeToolStripMenuItem.Text = "&Close";
-            this.suljeToolStripMenuItem.Click += new System.EventHandler(this.suljeToolStripMenuItem_Click);
+            this.suljeToolStripMenuItem.Click += new System.EventHandler(this.SuljeToolStripMenuItem_Click);
             // 
             // testaaTietokantayhteysToolStripMenuItem
             // 
@@ -126,7 +125,7 @@
             this.testaaTietokantayhteysToolStripMenuItem.Name = "testaaTietokantayhteysToolStripMenuItem";
             this.testaaTietokantayhteysToolStripMenuItem.Size = new System.Drawing.Size(352, 34);
             this.testaaTietokantayhteysToolStripMenuItem.Text = "&Test database connection";
-            this.testaaTietokantayhteysToolStripMenuItem.Click += new System.EventHandler(this.testaaTietokantayhteysToolStripMenuItem_Click);
+            this.testaaTietokantayhteysToolStripMenuItem.Click += new System.EventHandler(this.TestaaTietokantayhteysToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -217,7 +216,7 @@
             this.buttonNewQuestion.TabIndex = 5;
             this.buttonNewQuestion.Text = "&Draw a question";
             this.buttonNewQuestion.UseVisualStyleBackColor = true;
-            this.buttonNewQuestion.Click += new System.EventHandler(this.buttonNewQuestion_Click);
+            this.buttonNewQuestion.Click += new System.EventHandler(this.ButtonNewQuestion_Click);
             // 
             // Tietovisa
             // 
