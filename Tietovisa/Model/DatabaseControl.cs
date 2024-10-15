@@ -34,7 +34,7 @@ namespace Tietovisa.Model
             }
         }
 
-        // Hakee kysymykset listaan -> listalta arvotaan kysymys napilla 'buttonNewQuestion_Click' (Tietovisa.cs)
+        // Hakee kysymykset listaan -> listalta arvotaan kysymys napilla 'ButtonNewQuestion_Click' (Tietovisa.cs)
         public List<Question> GetAllQuestions() 
         {
             List<Question> questions = new List<Question>();
@@ -70,6 +70,44 @@ namespace Tietovisa.Model
             }
 
             return questions;
+        }
+
+        // Hakee kysymyksen vastaukset listaan -> listalta neljä vaihtoehtoa vastauspainikkeisiin
+        public List<Answer> GetAnswersByQuestionId(int questionId)
+        {
+            List<Answer> answers = new List<Answer>();
+
+            using (SqlConnection connection = new SqlConnection(connString))
+            {
+                string query = "SELECT id, question_id, answer_text, topic_info, is_correct FROM answers WHERE question_id = @questionId";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@questionId", questionId);
+
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        Answer answer = new Answer
+                        {
+                            Id = (int)reader["id"],
+                            QuestionId = (int)reader["question_id"],
+                            AnswerText = reader["answer_text"].ToString(),
+                            TopicInfo = reader["topic_info"].ToString(),
+                            IsCorrect = (bool)reader["is_correct"]
+                        };
+                        answers.Add(answer);
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error fetching answers: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            return answers;
         }
     }
 }
