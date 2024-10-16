@@ -45,9 +45,11 @@ namespace Tietovisa
         // painike pelin aloitukseen ja pelin aikaiseen uuden kysymyksen arvontaan
         private void ButtonNewQuestion_Click(object sender, EventArgs e)
         {
+            DatabaseControl dbControl = new DatabaseControl();
+
             if (questions == null)
             {
-                DatabaseControl dbControl = new DatabaseControl();
+                //DatabaseControl dbControl = new DatabaseControl();
                 questions = dbControl.GetAllQuestions();
 
                 if (questions == null || !questions.Any())
@@ -64,14 +66,31 @@ namespace Tietovisa
                 return;
             }
 
-            // arpoo kysymyksen
-            Question drawnQuestion = DrawRandomQuestion();
-
-            // näyttää kysymyksen tekstikentässä
+            // arpoo kysymyksen ja näyttää kysymyksen tekstikentässä
+            Question drawnQuestion = DrawRandomQuestion();            
             labelQuestion.Text = drawnQuestion.QuestionText;
 
-            // estää saman kysymyksen arvonnan toistamiseen ?
+            // estää saman kysymyksen arvonnan toistamiseen
             questions.Remove(drawnQuestion);
+
+            // hakee vastaukset arvotulle kysymykselle
+            //DatabaseControl dbControl = new DatabaseControl();
+            List<Answer> answers = dbControl.GetAnswersByQuestionId(drawnQuestion.Id);
+
+            if (answers.Count < 4) // tarkistuksena turha nykyisellä db:lla ? mutta OK
+            {
+                MessageBox.Show("Not enough answers for this question!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // sekoittaa vastausjärjestyksen napeille (mikäli pelaaja oppisi uudelleen pelatessa millä napilla on kunkin Q:n oikea vastaus)
+            answers = answers.OrderBy(a => Guid.NewGuid()).ToList();
+
+            // asettaa vastaukset napeille
+            buttonAnswer1.Text = answers[0].AnswerText;
+            buttonAnswer2.Text = answers[1].AnswerText;
+            buttonAnswer3.Text = answers[2].AnswerText;
+            buttonAnswer4.Text = answers[3].AnswerText;
         }
 
         private Question DrawRandomQuestion()
