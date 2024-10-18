@@ -13,6 +13,12 @@ namespace Tietovisa
         private readonly Random random = new Random();
         private Answer correctAnswer;
 
+        // muuttujat lisäinfon näyttöön per vastaus
+        private Answer buttonAnswer1Answer;
+        private Answer buttonAnswer2Answer;
+        private Answer buttonAnswer3Answer;
+        private Answer buttonAnswer4Answer;
+
         public Tietovisa()
         {
             InitializeComponent();
@@ -94,11 +100,15 @@ namespace Tietovisa
             // sekoittaa vastausjärjestyksen napeille (mikäli pelaaja oppisi uudelleen pelatessa millä napilla on kunkin Q:n oikea vastaus)
             answers = answers.OrderBy(a => Guid.NewGuid()).ToList();
 
-            // asettaa vastaukset napeille
+            // asettaa vastaukset napeille sekä vastauksen tallennus
             buttonAnswer1.Text = answers[0].AnswerText;
+            buttonAnswer1Answer = answers[0];
             buttonAnswer2.Text = answers[1].AnswerText;
+            buttonAnswer2Answer = answers[1];
             buttonAnswer3.Text = answers[2].AnswerText;
+            buttonAnswer3Answer = answers[2];
             buttonAnswer4.Text = answers[3].AnswerText;
+            buttonAnswer4Answer = answers[3];
 
             // Find the correct answer
             correctAnswer = answers.FirstOrDefault(a => a.IsCorrect);
@@ -119,6 +129,17 @@ namespace Tietovisa
         private void buttonAnswer_Click(object sender, EventArgs e)
         {
             Button clickedButton = sender as Button;
+            Answer selectedAnswer = null;
+
+            // determine which button was clicked and get the associated answer
+            if (clickedButton == buttonAnswer1)
+                selectedAnswer = buttonAnswer1Answer;
+            else if (clickedButton == buttonAnswer2)
+                selectedAnswer = buttonAnswer2Answer;
+            else if (clickedButton == buttonAnswer3)
+                selectedAnswer = buttonAnswer3Answer;
+            else if (clickedButton == buttonAnswer4)
+                selectedAnswer = buttonAnswer4Answer;
 
             // Check if the clicked answer is correct
             if (clickedButton.Text == correctAnswer.AnswerText)
@@ -129,6 +150,9 @@ namespace Tietovisa
             {
                 clickedButton.BackColor = Color.Red;   // Wrong answer
             }
+
+            // show additional info about the topic / question / selected answer
+            labelInfo.Text = selectedAnswer.TopicInfo;
         }
     }
 }
