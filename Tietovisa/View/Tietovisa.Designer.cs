@@ -147,7 +147,6 @@
             this.buttonAnswer4.Name = "buttonAnswer4";
             this.buttonAnswer4.Size = new System.Drawing.Size(202, 79);
             this.buttonAnswer4.TabIndex = 3;
-            this.buttonAnswer4.Text = "button4";
             this.buttonAnswer4.UseVisualStyleBackColor = true;
             // 
             // buttonAnswer3
@@ -156,7 +155,6 @@
             this.buttonAnswer3.Name = "buttonAnswer3";
             this.buttonAnswer3.Size = new System.Drawing.Size(202, 79);
             this.buttonAnswer3.TabIndex = 2;
-            this.buttonAnswer3.Text = "button3";
             this.buttonAnswer3.UseVisualStyleBackColor = true;
             // 
             // buttonAnswer2
@@ -165,7 +163,6 @@
             this.buttonAnswer2.Name = "buttonAnswer2";
             this.buttonAnswer2.Size = new System.Drawing.Size(202, 79);
             this.buttonAnswer2.TabIndex = 1;
-            this.buttonAnswer2.Text = "button2";
             this.buttonAnswer2.UseVisualStyleBackColor = true;
             // 
             // buttonAnswer1
@@ -174,7 +171,6 @@
             this.buttonAnswer1.Name = "buttonAnswer1";
             this.buttonAnswer1.Size = new System.Drawing.Size(202, 79);
             this.buttonAnswer1.TabIndex = 0;
-            this.buttonAnswer1.Text = "button1";
             this.buttonAnswer1.UseVisualStyleBackColor = true;
             // 
             // labelQuestion

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Tietovisa.Model;
@@ -10,6 +11,7 @@ namespace Tietovisa
     {
         private List<Question> questions;
         private readonly Random random = new Random();
+        private Answer correctAnswer;
 
         public Tietovisa()
         {
@@ -46,6 +48,12 @@ namespace Tietovisa
         private void ButtonNewQuestion_Click(object sender, EventArgs e)
         {
             DatabaseControl dbControl = new DatabaseControl();
+
+            // Reset button colors to their default before showing a new question
+            buttonAnswer1.BackColor = SystemColors.Control;
+            buttonAnswer2.BackColor = SystemColors.Control;
+            buttonAnswer3.BackColor = SystemColors.Control;
+            buttonAnswer4.BackColor = SystemColors.Control;
 
             if (questions == null)
             {
@@ -91,12 +99,36 @@ namespace Tietovisa
             buttonAnswer2.Text = answers[1].AnswerText;
             buttonAnswer3.Text = answers[2].AnswerText;
             buttonAnswer4.Text = answers[3].AnswerText;
+
+            // Find the correct answer
+            correctAnswer = answers.FirstOrDefault(a => a.IsCorrect);
+
+            // Attach event handlers for answer buttons
+            buttonAnswer1.Click += buttonAnswer_Click;
+            buttonAnswer2.Click += buttonAnswer_Click;
+            buttonAnswer3.Click += buttonAnswer_Click;
+            buttonAnswer4.Click += buttonAnswer_Click;
         }
 
         private Question DrawRandomQuestion()
         {
             int index = random.Next(questions.Count);
             return questions[index];
+        }
+
+        private void buttonAnswer_Click(object sender, EventArgs e)
+        {
+            Button clickedButton = sender as Button;
+
+            // Check if the clicked answer is correct
+            if (clickedButton.Text == correctAnswer.AnswerText)
+            {
+                clickedButton.BackColor = Color.Green; // Correct answer
+            }
+            else
+            {
+                clickedButton.BackColor = Color.Red;   // Wrong answer
+            }
         }
     }
 }
