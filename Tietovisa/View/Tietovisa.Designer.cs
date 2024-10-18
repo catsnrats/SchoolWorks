@@ -1,11 +1,14 @@
-﻿namespace Tietovisa
+﻿using System;
+using System.Threading;
+
+namespace Tietovisa
 {
     partial class Tietovisa
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private System.ComponentModel.IContainer components = null;       
 
         /// <summary>
         /// Clean up any resources being used.
@@ -31,10 +34,10 @@
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tiedostoValikko = new System.Windows.Forms.ToolStripMenuItem();
-            this.tasoValikko = new System.Windows.Forms.ToolStripMenuItem();
-            this.helppoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.keskitasoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vaikeaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.levelMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.easyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.midToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tietojaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suljeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testaaTietokantayhteysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,7 +49,7 @@
             this.labelQuestion = new System.Windows.Forms.Label();
             this.labelInfo = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.labelAika = new System.Windows.Forms.Label();
+            this.labelTimer = new System.Windows.Forms.Label();
             this.buttonNewQuestion = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -67,7 +70,7 @@
             // tiedostoValikko
             // 
             this.tiedostoValikko.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tasoValikko,
+            this.levelMenu,
             this.tietojaToolStripMenuItem,
             this.suljeToolStripMenuItem,
             this.testaaTietokantayhteysToolStripMenuItem});
@@ -75,34 +78,34 @@
             this.tiedostoValikko.Size = new System.Drawing.Size(54, 29);
             this.tiedostoValikko.Text = "&File";
             // 
-            // tasoValikko
+            // levelMenu
             // 
-            this.tasoValikko.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.helppoToolStripMenuItem,
-            this.keskitasoToolStripMenuItem,
-            this.vaikeaToolStripMenuItem});
-            this.tasoValikko.Font = new System.Drawing.Font("Arial", 10.25F);
-            this.tasoValikko.Name = "tasoValikko";
-            this.tasoValikko.Size = new System.Drawing.Size(352, 34);
-            this.tasoValikko.Text = "&Difficulty";
+            this.levelMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.easyToolStripMenuItem,
+            this.midToolStripMenuItem,
+            this.hardToolStripMenuItem});
+            this.levelMenu.Font = new System.Drawing.Font("Arial", 10.25F);
+            this.levelMenu.Name = "levelMenu";
+            this.levelMenu.Size = new System.Drawing.Size(352, 34);
+            this.levelMenu.Text = "&Difficulty";
             // 
-            // helppoToolStripMenuItem
+            // easyToolStripMenuItem
             // 
-            this.helppoToolStripMenuItem.Name = "helppoToolStripMenuItem";
-            this.helppoToolStripMenuItem.Size = new System.Drawing.Size(226, 34);
-            this.helppoToolStripMenuItem.Text = "&Easy";
+            this.easyToolStripMenuItem.Name = "easyToolStripMenuItem";
+            this.easyToolStripMenuItem.Size = new System.Drawing.Size(226, 34);
+            this.easyToolStripMenuItem.Text = "&Easy";
             // 
-            // keskitasoToolStripMenuItem
+            // midToolStripMenuItem
             // 
-            this.keskitasoToolStripMenuItem.Name = "keskitasoToolStripMenuItem";
-            this.keskitasoToolStripMenuItem.Size = new System.Drawing.Size(226, 34);
-            this.keskitasoToolStripMenuItem.Text = "&Intermediate";
+            this.midToolStripMenuItem.Name = "midToolStripMenuItem";
+            this.midToolStripMenuItem.Size = new System.Drawing.Size(226, 34);
+            this.midToolStripMenuItem.Text = "&Intermediate";
             // 
-            // vaikeaToolStripMenuItem
+            // hardToolStripMenuItem
             // 
-            this.vaikeaToolStripMenuItem.Name = "vaikeaToolStripMenuItem";
-            this.vaikeaToolStripMenuItem.Size = new System.Drawing.Size(226, 34);
-            this.vaikeaToolStripMenuItem.Text = "&Hard";
+            this.hardToolStripMenuItem.Name = "hardToolStripMenuItem";
+            this.hardToolStripMenuItem.Size = new System.Drawing.Size(226, 34);
+            this.hardToolStripMenuItem.Text = "&Hard";
             // 
             // tietojaToolStripMenuItem
             // 
@@ -188,20 +191,27 @@
             // 
             this.labelInfo.AutoSize = true;
             this.labelInfo.Font = new System.Drawing.Font("Arial", 12.25F);
-            this.labelInfo.Location = new System.Drawing.Point(694, 63);
+            this.labelInfo.Location = new System.Drawing.Point(633, 63);
+            this.labelInfo.MaximumSize = new System.Drawing.Size(300, 0);
             this.labelInfo.Name = "labelInfo";
             this.labelInfo.Size = new System.Drawing.Size(172, 28);
             this.labelInfo.TabIndex = 3;
             this.labelInfo.Text = "Additional info";
             // 
-            // labelAika
+            // timer1
             // 
-            this.labelAika.AutoSize = true;
-            this.labelAika.Location = new System.Drawing.Point(247, 552);
-            this.labelAika.Name = "labelAika";
-            this.labelAika.Size = new System.Drawing.Size(58, 19);
-            this.labelAika.TabIndex = 4;
-            this.labelAika.Text = "TIMER";
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // labelTimer
+            // 
+            this.labelTimer.AutoSize = true;
+            this.labelTimer.Location = new System.Drawing.Point(247, 552);
+            this.labelTimer.Name = "labelTimer";
+            this.labelTimer.Size = new System.Drawing.Size(58, 19);
+            this.labelTimer.TabIndex = 4;
+            this.labelTimer.Text = "TIMER";
             // 
             // buttonNewQuestion
             // 
@@ -220,7 +230,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(975, 625);
             this.Controls.Add(this.buttonNewQuestion);
-            this.Controls.Add(this.labelAika);
+            this.Controls.Add(this.labelTimer);
             this.Controls.Add(this.labelInfo);
             this.Controls.Add(this.labelQuestion);
             this.Controls.Add(this.groupBox1);
@@ -242,7 +252,7 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tiedostoValikko;
-        private System.Windows.Forms.ToolStripMenuItem tasoValikko;
+        private System.Windows.Forms.ToolStripMenuItem levelMenu;
         private System.Windows.Forms.ToolStripMenuItem tietojaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem suljeToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -252,11 +262,11 @@
         private System.Windows.Forms.Button buttonAnswer1;
         private System.Windows.Forms.Label labelQuestion;
         private System.Windows.Forms.Label labelInfo;
-        private System.Windows.Forms.ToolStripMenuItem helppoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem keskitasoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vaikeaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem easyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem midToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hardToolStripMenuItem;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label labelAika;
+        private System.Windows.Forms.Label labelTimer;
         private System.Windows.Forms.ToolStripMenuItem testaaTietokantayhteysToolStripMenuItem;
         private System.Windows.Forms.Button buttonNewQuestion;
     }

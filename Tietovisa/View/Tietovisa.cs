@@ -19,6 +19,8 @@ namespace Tietovisa
         private Answer buttonAnswer3Answer;
         private Answer buttonAnswer4Answer;
 
+        private int timeLeft; // peliajalle
+
         public Tietovisa()
         {
             InitializeComponent();
@@ -54,6 +56,11 @@ namespace Tietovisa
         private void ButtonNewQuestion_Click(object sender, EventArgs e)
         {
             DatabaseControl dbControl = new DatabaseControl();
+
+            // for timer
+            timeLeft = 5;
+            labelTimer.Text = timeLeft.ToString(); // display the init. time
+            timer1.Start();
 
             // Reset button colors to their default before showing a new question
             buttonAnswer1.BackColor = SystemColors.Control;
@@ -153,6 +160,25 @@ namespace Tietovisa
 
             // show additional info about the topic / question / selected answer
             labelInfo.Text = selectedAnswer.TopicInfo;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (timeLeft > 0)
+            {
+                // decrease time left / updt. the label
+                timeLeft--;
+                labelTimer.Text = timeLeft.ToString();
+            }
+            else 
+            {
+                // time's up
+                timer1.Stop();
+                MessageBox.Show("Time's up! Moving to the next question.", "Time's Up", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // automatically move to the next question
+                ButtonNewQuestion_Click(null, null);
+            }
         }
     }
 }
