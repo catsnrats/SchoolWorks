@@ -19,7 +19,8 @@ namespace Tietovisa
         private Answer buttonAnswer3Answer;
         private Answer buttonAnswer4Answer;
 
-        private int timeLeft; // peliajalle
+        private int timeLeft = 5; // peliajalle
+        private int score = 0;
 
         public Tietovisa()
         {
@@ -74,19 +75,23 @@ namespace Tietovisa
 
             if (questions == null)
             {                
-                questions = dbControl.GetAllQuestions();
+                List<Question> allQuestions = dbControl.GetAllQuestions();
 
-                if (questions == null || !questions.Any())
+                if (allQuestions == null || allQuestions.Count < 20)
                 { 
                     MessageBox.Show("No questions available", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+
+                // arpoo 20 kysymystä kaikista kysymyksistä
+                questions = allQuestions.OrderBy(q => random.Next()).Take(2).ToList();
             }
 
             // tarkistaa onko kysymyksiä jäljellä...
             if (questions.Count == 0)
             {
-                MessageBox.Show("All questions have been asked!", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("All questions have been asked!", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"All questions have been asked!\nYour total score is: {score}", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -156,6 +161,7 @@ namespace Tietovisa
             if (clickedButton.Text == correctAnswer.AnswerText)
             {
                 clickedButton.BackColor = Color.Green; // Correct answer
+                score += 10;
             }
             else
             {
@@ -174,14 +180,20 @@ namespace Tietovisa
                 timeLeft--;
                 labelTimer.Text = timeLeft.ToString();
             }
-            else 
+            else
             {
                 // time's up
                 timer1.Stop();
-                MessageBox.Show("Time's up! Moving to the next question.", "Time's Up", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Time's up! Draw next question.", "Time's Up", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // automatically move to the next question
-                ButtonNewQuestion_Click(null, null);
+                if (questions.Count == 0)
+                {
+                    MessageBox.Show($"All questions have been asked!\nYour total score is: {score}", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    buttonNewQuestion.Enabled = true;
+                }
             }
         }
     }
