@@ -63,7 +63,7 @@ namespace Tietovisa
             this.tiedostoValikko});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(975, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(975, 36);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -194,9 +194,9 @@ namespace Tietovisa
             this.labelInfo.Location = new System.Drawing.Point(633, 63);
             this.labelInfo.MaximumSize = new System.Drawing.Size(300, 0);
             this.labelInfo.Name = "labelInfo";
-            this.labelInfo.Size = new System.Drawing.Size(172, 28);
+            this.labelInfo.Size = new System.Drawing.Size(293, 56);
             this.labelInfo.TabIndex = 3;
-            this.labelInfo.Text = "Additional info";
+            this.labelInfo.Text = "Start game by drawing a question";
             // 
             // timer1
             // 

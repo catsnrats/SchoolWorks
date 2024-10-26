@@ -28,7 +28,9 @@ namespace Tietovisa
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            timer1.Stop();
 
+            //questions = null;
         }
 
         private void SuljeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -57,9 +59,11 @@ namespace Tietovisa
         {
             DatabaseControl dbControl = new DatabaseControl();
 
+            labelInfo.Text = null;
+
             // for timer
-            timeLeft = 5;
-            labelTimer.Text = timeLeft.ToString(); // display the init. time
+            timeLeft = 10;
+            labelTimer.Text = timeLeft.ToString(); // display the init. time            
             timer1.Start();
 
             // Reset button colors to their default before showing a new question
@@ -69,8 +73,7 @@ namespace Tietovisa
             buttonAnswer4.BackColor = SystemColors.Control;
 
             if (questions == null)
-            {
-                //DatabaseControl dbControl = new DatabaseControl();
+            {                
                 questions = dbControl.GetAllQuestions();
 
                 if (questions == null || !questions.Any())
@@ -94,8 +97,7 @@ namespace Tietovisa
             // estää saman kysymyksen arvonnan toistamiseen
             questions.Remove(drawnQuestion);
 
-            // hakee vastaukset arvotulle kysymykselle
-            //DatabaseControl dbControl = new DatabaseControl();
+            // hakee vastaukset arvotulle kysymykselle            
             List<Answer> answers = dbControl.GetAnswersByQuestionId(drawnQuestion.Id);
 
             if (answers.Count < 4) // tarkistuksena turha nykyisellä db:lla ? mutta OK
@@ -137,6 +139,8 @@ namespace Tietovisa
         {
             Button clickedButton = sender as Button;
             Answer selectedAnswer = null;
+
+            timer1.Stop();
 
             // determine which button was clicked and get the associated answer
             if (clickedButton == buttonAnswer1)
