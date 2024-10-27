@@ -51,6 +51,7 @@ namespace Tietovisa
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.labelTimer = new System.Windows.Forms.Label();
             this.buttonNewQuestion = new System.Windows.Forms.Button();
+            this.labelQleft = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +64,7 @@ namespace Tietovisa
             this.tiedostoValikko});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(975, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(975, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -75,7 +76,7 @@ namespace Tietovisa
             this.suljeToolStripMenuItem,
             this.testaaTietokantayhteysToolStripMenuItem});
             this.tiedostoValikko.Name = "tiedostoValikko";
-            this.tiedostoValikko.Size = new System.Drawing.Size(54, 29);
+            this.tiedostoValikko.Size = new System.Drawing.Size(54, 32);
             this.tiedostoValikko.Text = "&File";
             // 
             // levelMenu
@@ -207,9 +208,10 @@ namespace Tietovisa
             // labelTimer
             // 
             this.labelTimer.AutoSize = true;
-            this.labelTimer.Location = new System.Drawing.Point(247, 552);
+            this.labelTimer.Font = new System.Drawing.Font("Arial", 25.25F);
+            this.labelTimer.Location = new System.Drawing.Point(295, 551);
             this.labelTimer.Name = "labelTimer";
-            this.labelTimer.Size = new System.Drawing.Size(58, 19);
+            this.labelTimer.Size = new System.Drawing.Size(183, 58);
             this.labelTimer.TabIndex = 4;
             this.labelTimer.Text = "TIMER";
             // 
@@ -224,11 +226,22 @@ namespace Tietovisa
             this.buttonNewQuestion.UseVisualStyleBackColor = true;
             this.buttonNewQuestion.Click += new System.EventHandler(this.ButtonNewQuestion_Click);
             // 
+            // labelQleft
+            // 
+            this.labelQleft.AutoSize = true;
+            this.labelQleft.Font = new System.Drawing.Font("Arial", 14.25F);
+            this.labelQleft.Location = new System.Drawing.Point(64, 571);
+            this.labelQleft.Name = "labelQleft";
+            this.labelQleft.Size = new System.Drawing.Size(139, 33);
+            this.labelQleft.TabIndex = 6;
+            this.labelQleft.Text = "labelQleft";
+            // 
             // Tietovisa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(975, 625);
+            this.Controls.Add(this.labelQleft);
             this.Controls.Add(this.buttonNewQuestion);
             this.Controls.Add(this.labelTimer);
             this.Controls.Add(this.labelInfo);
@@ -269,6 +282,7 @@ namespace Tietovisa
         private System.Windows.Forms.Label labelTimer;
         private System.Windows.Forms.ToolStripMenuItem testaaTietokantayhteysToolStripMenuItem;
         private System.Windows.Forms.Button buttonNewQuestion;
+        private System.Windows.Forms.Label labelQleft;
     }
 }
 

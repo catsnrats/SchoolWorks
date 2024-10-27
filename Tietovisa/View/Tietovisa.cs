@@ -19,8 +19,8 @@ namespace Tietovisa
         private Answer buttonAnswer3Answer;
         private Answer buttonAnswer4Answer;
 
-        private int timeLeft = 5; // peliajalle
-        private int score = 0;
+        private int timeLeft; // peliajalle
+        private int score;
 
         public Tietovisa()
         {
@@ -29,9 +29,7 @@ namespace Tietovisa
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            timer1.Stop();
-
-            //questions = null;
+            timer1.Stop();            
         }
 
         private void SuljeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -53,7 +51,7 @@ namespace Tietovisa
             {
                 MessageBox.Show("Failed to connect to the database.", "Connection Test", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+        }       
 
         // painike pelin aloitukseen ja pelin aikaiseen uuden kysymyksen arvontaan
         private void ButtonNewQuestion_Click(object sender, EventArgs e)
@@ -74,25 +72,53 @@ namespace Tietovisa
             buttonAnswer4.BackColor = SystemColors.Control;
 
             if (questions == null)
-            {                
-                List<Question> allQuestions = dbControl.GetAllQuestions();
+            {
+                List<Question> allQuestions = dbControl.GetAllQuestions();                
 
                 if (allQuestions == null || allQuestions.Count < 20)
-                { 
+                {
                     MessageBox.Show("No questions available", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
                 // arpoo 20 kysymystä kaikista kysymyksistä
-                questions = allQuestions.OrderBy(q => random.Next()).Take(2).ToList();
+                questions = allQuestions.OrderBy(q => random.Next()).Take(5).ToList();
             }
+
+            labelQleft.Text = $"Questions left: {questions.Count}"; // kysymysten määrän näyttämiseen
 
             // tarkistaa onko kysymyksiä jäljellä...
             if (questions.Count == 0)
             {
-                //MessageBox.Show("All questions have been asked!", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                timer1.Stop();
                 MessageBox.Show($"All questions have been asked!\nYour total score is: {score}", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+
+                // Ask if the player wants to start a new game
+                var result = MessageBox.Show("Would you like to start a new game?", "New Game", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    // Reset game: reload questions and reset score                   
+                    List<Question> allQuestions = new DatabaseControl().GetAllQuestions();
+
+                    // Check if there are enough questions for a new game
+                    if (allQuestions == null || allQuestions.Count < 20)
+                    {
+                        MessageBox.Show("Not enough questions available to start a new game.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    // Draw a new set of 20 questions
+                    questions = allQuestions.OrderBy(q => random.Next()).Take(5).ToList();
+                    score = 0; // Reset the score for the new game
+                    labelQleft.Text = $"Questions left: {questions.Count}";
+
+                    // Start the new game by drawing the first question
+                    ButtonNewQuestion_Click(null, null);
+                }
+                else
+                {
+                    return; // Exit if the player doesn’t want a new game
+                }
             }
 
             // arpoo kysymyksen ja näyttää kysymyksen tekstikentässä
@@ -101,16 +127,11 @@ namespace Tietovisa
 
             // estää saman kysymyksen arvonnan toistamiseen
             questions.Remove(drawnQuestion);
+            labelQleft.Text = $"Questions left: {questions.Count}"; // päivittää kysymysten määrää
 
             // hakee vastaukset arvotulle kysymykselle            
             List<Answer> answers = dbControl.GetAnswersByQuestionId(drawnQuestion.Id);
-
-            if (answers.Count < 4) // tarkistuksena turha nykyisellä db:lla ? mutta OK
-            {
-                MessageBox.Show("Not enough answers for this question!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
+          
             // sekoittaa vastausjärjestyksen napeille (mikäli pelaaja oppisi uudelleen pelatessa millä napilla on kunkin Q:n oikea vastaus)
             answers = answers.OrderBy(a => Guid.NewGuid()).ToList();
 
@@ -185,15 +206,6 @@ namespace Tietovisa
                 // time's up
                 timer1.Stop();
                 MessageBox.Show("Time's up! Draw next question.", "Time's Up", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                if (questions.Count == 0)
-                {
-                    MessageBox.Show($"All questions have been asked!\nYour total score is: {score}", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    buttonNewQuestion.Enabled = true;
-                }
             }
         }
     }
