@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Windows.Forms;
 using Tietovisa.Model;
@@ -101,28 +102,30 @@ namespace Tietovisa
                     List<Question> allQuestions = new DatabaseControl().GetAllQuestions();
 
                     // Check if there are enough questions for a new game
-                    if (allQuestions == null || allQuestions.Count < 5)
+                    if (allQuestions == null || allQuestions.Count < 6)
                     {
                         MessageBox.Show("Not enough questions available to start a new game.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
 
                     // Draw a new set of 20 questions
-                    questions = allQuestions.OrderBy(q => random.Next()).Take(5).ToList();
+                    questions = allQuestions.OrderBy(q => random.Next()).Take(6).ToList();
                     score = 0; // Reset the score for the new game
                     labelQleft.Text = $"Questions left: {questions.Count}";
 
                     // Start the new game by drawing the first question
-                    ButtonNewQuestion_Click(null, null);
+                    ButtonNewQuestion_Click(null, null);                   
+
                 }
                 else
                 {
+                    Application.Exit();
                     return; // Exit if the player doesn’t want a new game
                 }
             }
 
             // arpoo kysymyksen ja näyttää kysymyksen tekstikentässä
-            Question drawnQuestion = DrawRandomQuestion();            
+            Question drawnQuestion = DrawRandomQuestion();
             labelQuestion.Text = drawnQuestion.QuestionText;
 
             // estää saman kysymyksen arvonnan toistamiseen
@@ -131,7 +134,7 @@ namespace Tietovisa
 
             // hakee vastaukset arvotulle kysymykselle            
             List<Answer> answers = dbControl.GetAnswersByQuestionId(drawnQuestion.Id);
-          
+
             // sekoittaa vastausjärjestyksen napeille (mikäli pelaaja oppisi uudelleen pelatessa millä napilla on kunkin Q:n oikea vastaus)
             answers = answers.OrderBy(a => Guid.NewGuid()).ToList();
 
@@ -159,7 +162,7 @@ namespace Tietovisa
             buttonAnswer2.Click += buttonAnswer_Click;
             buttonAnswer3.Click += buttonAnswer_Click;
             buttonAnswer4.Click += buttonAnswer_Click;
-        }
+        }      
 
         private Question DrawRandomQuestion()
         {
