@@ -60,7 +60,7 @@ namespace Tietovisa
             this.tiedostoValikko});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(975, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(975, 36);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -161,9 +161,10 @@ namespace Tietovisa
             this.labelInfo.Location = new System.Drawing.Point(633, 63);
             this.labelInfo.MaximumSize = new System.Drawing.Size(300, 0);
             this.labelInfo.Name = "labelInfo";
-            this.labelInfo.Size = new System.Drawing.Size(293, 56);
+            this.labelInfo.Size = new System.Drawing.Size(295, 112);
             this.labelInfo.TabIndex = 3;
-            this.labelInfo.Text = "Start game by drawing a question";
+            this.labelInfo.Text = "Start game by drawing a question. You have time 10 seconds per question. 10 quest" +
+    "ions per game.";
             // 
             // timer1
             // 
@@ -175,11 +176,10 @@ namespace Tietovisa
             // 
             this.labelTimer.AutoSize = true;
             this.labelTimer.Font = new System.Drawing.Font("Arial", 25.25F);
-            this.labelTimer.Location = new System.Drawing.Point(295, 551);
+            this.labelTimer.Location = new System.Drawing.Point(390, 551);
             this.labelTimer.Name = "labelTimer";
-            this.labelTimer.Size = new System.Drawing.Size(183, 58);
+            this.labelTimer.Size = new System.Drawing.Size(0, 58);
             this.labelTimer.TabIndex = 4;
-            this.labelTimer.Text = "TIMER";
             // 
             // buttonNewQuestion
             // 
@@ -196,11 +196,10 @@ namespace Tietovisa
             // 
             this.labelQleft.AutoSize = true;
             this.labelQleft.Font = new System.Drawing.Font("Arial", 14.25F);
-            this.labelQleft.Location = new System.Drawing.Point(64, 571);
+            this.labelQleft.Location = new System.Drawing.Point(19, 571);
             this.labelQleft.Name = "labelQleft";
-            this.labelQleft.Size = new System.Drawing.Size(139, 33);
+            this.labelQleft.Size = new System.Drawing.Size(0, 33);
             this.labelQleft.TabIndex = 6;
-            this.labelQleft.Text = "labelQleft";
             // 
             // Tietovisa
             // 

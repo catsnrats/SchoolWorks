@@ -12,14 +12,13 @@ namespace Tietovisa
         private List<Question> questions;
         private readonly Random random = new Random();
         private Answer correctAnswer;
-
-        // muuttujat lisäinfon näyttöön per vastaus
+        
         private Answer buttonAnswer1Answer;
         private Answer buttonAnswer2Answer;
         private Answer buttonAnswer3Answer;
         private Answer buttonAnswer4Answer;
 
-        private int timeLeft; // peliajalle
+        private int timeLeft;
         private int score;
 
         public Tietovisa()
@@ -37,9 +36,9 @@ namespace Tietovisa
             Application.Exit();
         }
 
-        private void TestaaTietokantayhteysToolStripMenuItem_Click(object sender, EventArgs e) // DB-testi
+        private void TestaaTietokantayhteysToolStripMenuItem_Click(object sender, EventArgs e) // for database connection testing
         {
-            DatabaseControl dbControl = new DatabaseControl(); // DatabaseControl instanssi
+            DatabaseControl dbControl = new DatabaseControl(); // DatabaseControl instance
 
             bool connectionSuccessful = dbControl.ConnectDatabase();
 
@@ -51,9 +50,8 @@ namespace Tietovisa
             {
                 MessageBox.Show("Failed to connect to the database.", "Connection Test", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }       
-
-        // painike pelin aloitukseen ja pelin aikaiseen uuden kysymyksen arvontaan
+        }
+        
         private void ButtonNewQuestion_Click(object sender, EventArgs e)
         {
             DatabaseControl dbControl = new DatabaseControl();
@@ -75,19 +73,19 @@ namespace Tietovisa
             {
                 List<Question> allQuestions = dbControl.GetAllQuestions();                
 
-                if (allQuestions == null || allQuestions.Count < 20)
+                if (allQuestions == null || allQuestions.Count < 10)
                 {
                     MessageBox.Show("No questions available", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                // arpoo 20 kysymystä kaikista kysymyksistä
-                questions = allQuestions.OrderBy(q => random.Next()).Take(5).ToList();
+                // draws 10 questions from Q-pool
+                questions = allQuestions.OrderBy(q => random.Next()).Take(10).ToList();
             }
 
-            labelQleft.Text = $"Questions left: {questions.Count}"; // kysymysten määrän näyttämiseen
+            labelQleft.Text = $"Questions left: {questions.Count}";
 
-            // tarkistaa onko kysymyksiä jäljellä...
+            // checks if any Qs left
             if (questions.Count == 0)
             {
                 timer1.Stop();
@@ -101,14 +99,14 @@ namespace Tietovisa
                     List<Question> allQuestions = new DatabaseControl().GetAllQuestions();
 
                     // Check if there are enough questions for a new game
-                    if (allQuestions == null || allQuestions.Count < 6)
+                    if (allQuestions == null || allQuestions.Count < 11)
                     {
                         MessageBox.Show("Not enough questions available to start a new game.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
 
                     // Draw a new set of 20 questions
-                    questions = allQuestions.OrderBy(q => random.Next()).Take(6).ToList();
+                    questions = allQuestions.OrderBy(q => random.Next()).Take(11).ToList();
                     score = 0; // Reset the score for the new game
                     labelQleft.Text = $"Questions left: {questions.Count}";
 
@@ -123,21 +121,21 @@ namespace Tietovisa
                 }
             }
 
-            // arpoo kysymyksen ja näyttää kysymyksen tekstikentässä
+            // draws a question and shows it text label
             Question drawnQuestion = DrawRandomQuestion();
             labelQuestion.Text = drawnQuestion.QuestionText;
 
-            // estää saman kysymyksen arvonnan toistamiseen
+            // prevents drawing same Q twice
             questions.Remove(drawnQuestion);
-            labelQleft.Text = $"Questions left: {questions.Count}"; // päivittää kysymysten määrää
+            labelQleft.Text = $"Questions left: {questions.Count}"; // update Q count
 
-            // hakee vastaukset arvotulle kysymykselle            
+            // fetch answer choises for drawn question            
             List<Answer> answers = dbControl.GetAnswersByQuestionId(drawnQuestion.Id);
 
-            // sekoittaa vastausjärjestyksen napeille (mikäli pelaaja oppisi uudelleen pelatessa millä napilla on kunkin Q:n oikea vastaus)
+            // mixes answer order in buttons
             answers = answers.OrderBy(a => Guid.NewGuid()).ToList();
 
-            // asettaa vastaukset napeille sekä vastauksen tallennus
+            // set answers in buttons...
             buttonAnswer1.Text = answers[0].AnswerText;
             buttonAnswer1Answer = answers[0];
             buttonAnswer2.Text = answers[1].AnswerText;
@@ -169,13 +167,13 @@ namespace Tietovisa
             buttonAnswer4.Enabled = true;
         }      
 
-        private Question DrawRandomQuestion()
+        private Question DrawRandomQuestion() // method draws questions
         {
             int index = random.Next(questions.Count);
             return questions[index];
         }
 
-        private void buttonAnswer_Click(object sender, EventArgs e)
+        private void buttonAnswer_Click(object sender, EventArgs e) // handles players answers
         {
             Button clickedButton = sender as Button;
             Answer selectedAnswer = null;
