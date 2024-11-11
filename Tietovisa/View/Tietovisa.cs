@@ -101,7 +101,7 @@ namespace Tietovisa
                     List<Question> allQuestions = new DatabaseControl().GetAllQuestions();
 
                     // Check if there are enough questions for a new game
-                    if (allQuestions == null || allQuestions.Count < 20)
+                    if (allQuestions == null || allQuestions.Count < 5)
                     {
                         MessageBox.Show("Not enough questions available to start a new game.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
@@ -148,6 +148,12 @@ namespace Tietovisa
             // Find the correct answer
             correctAnswer = answers.FirstOrDefault(a => a.IsCorrect);
 
+            // Remove existing handlers to avoind duplication
+            buttonAnswer1.Click -= buttonAnswer_Click;
+            buttonAnswer2.Click -= buttonAnswer_Click;
+            buttonAnswer3.Click -= buttonAnswer_Click;
+            buttonAnswer4.Click -= buttonAnswer_Click;
+
             // Attach event handlers for answer buttons
             buttonAnswer1.Click += buttonAnswer_Click;
             buttonAnswer2.Click += buttonAnswer_Click;
@@ -182,7 +188,7 @@ namespace Tietovisa
             if (clickedButton.Text == correctAnswer.AnswerText)
             {
                 clickedButton.BackColor = Color.Green; // Correct answer
-                score += 10;
+                score += 20;
             }
             else
             {
