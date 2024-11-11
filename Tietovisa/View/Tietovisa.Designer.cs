@@ -34,10 +34,6 @@ namespace Tietovisa
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tiedostoValikko = new System.Windows.Forms.ToolStripMenuItem();
-            this.levelMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.easyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.midToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tietojaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suljeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testaaTietokantayhteysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,42 +67,12 @@ namespace Tietovisa
             // tiedostoValikko
             // 
             this.tiedostoValikko.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.levelMenu,
             this.tietojaToolStripMenuItem,
             this.suljeToolStripMenuItem,
             this.testaaTietokantayhteysToolStripMenuItem});
             this.tiedostoValikko.Name = "tiedostoValikko";
-            this.tiedostoValikko.Size = new System.Drawing.Size(54, 32);
+            this.tiedostoValikko.Size = new System.Drawing.Size(54, 29);
             this.tiedostoValikko.Text = "&File";
-            // 
-            // levelMenu
-            // 
-            this.levelMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.easyToolStripMenuItem,
-            this.midToolStripMenuItem,
-            this.hardToolStripMenuItem});
-            this.levelMenu.Font = new System.Drawing.Font("Arial", 10.25F);
-            this.levelMenu.Name = "levelMenu";
-            this.levelMenu.Size = new System.Drawing.Size(352, 34);
-            this.levelMenu.Text = "&Difficulty";
-            // 
-            // easyToolStripMenuItem
-            // 
-            this.easyToolStripMenuItem.Name = "easyToolStripMenuItem";
-            this.easyToolStripMenuItem.Size = new System.Drawing.Size(226, 34);
-            this.easyToolStripMenuItem.Text = "&Easy";
-            // 
-            // midToolStripMenuItem
-            // 
-            this.midToolStripMenuItem.Name = "midToolStripMenuItem";
-            this.midToolStripMenuItem.Size = new System.Drawing.Size(226, 34);
-            this.midToolStripMenuItem.Text = "&Intermediate";
-            // 
-            // hardToolStripMenuItem
-            // 
-            this.hardToolStripMenuItem.Name = "hardToolStripMenuItem";
-            this.hardToolStripMenuItem.Size = new System.Drawing.Size(226, 34);
-            this.hardToolStripMenuItem.Text = "&Hard";
             // 
             // tietojaToolStripMenuItem
             // 
@@ -265,7 +231,6 @@ namespace Tietovisa
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tiedostoValikko;
-        private System.Windows.Forms.ToolStripMenuItem levelMenu;
         private System.Windows.Forms.ToolStripMenuItem tietojaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem suljeToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -275,9 +240,6 @@ namespace Tietovisa
         private System.Windows.Forms.Button buttonAnswer1;
         private System.Windows.Forms.Label labelQuestion;
         private System.Windows.Forms.Label labelInfo;
-        private System.Windows.Forms.ToolStripMenuItem easyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem midToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hardToolStripMenuItem;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label labelTimer;
         private System.Windows.Forms.ToolStripMenuItem testaaTietokantayhteysToolStripMenuItem;

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Text;
 using System.Linq;
 using System.Windows.Forms;
 using Tietovisa.Model;
@@ -162,6 +161,12 @@ namespace Tietovisa
             buttonAnswer2.Click += buttonAnswer_Click;
             buttonAnswer3.Click += buttonAnswer_Click;
             buttonAnswer4.Click += buttonAnswer_Click;
+
+            // Enable buttons (time's up disables)
+            buttonAnswer1.Enabled = true;
+            buttonAnswer2.Enabled = true;
+            buttonAnswer3.Enabled = true;
+            buttonAnswer4.Enabled = true;
         }      
 
         private Question DrawRandomQuestion()
@@ -215,6 +220,12 @@ namespace Tietovisa
                 // time's up
                 timer1.Stop();
                 MessageBox.Show("Time's up! Draw next question.", "Time's Up", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // prevents answering after time's up
+                buttonAnswer1.Enabled = false;
+                buttonAnswer2.Enabled = false;
+                buttonAnswer3.Enabled = false;
+                buttonAnswer4.Enabled = false;
             }
         }
     }
