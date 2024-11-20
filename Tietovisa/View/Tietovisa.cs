@@ -195,10 +195,20 @@ namespace Tietovisa
             {
                 clickedButton.BackColor = Color.Green; // Correct answer
                 score += 20;
+
+                buttonAnswer1.Enabled = false;
+                buttonAnswer2.Enabled = false;
+                buttonAnswer3.Enabled = false;
+                buttonAnswer4.Enabled = false;
             }
             else
             {
                 clickedButton.BackColor = Color.Red;   // Wrong answer
+
+                buttonAnswer1.Enabled = false;
+                buttonAnswer2.Enabled = false;
+                buttonAnswer3.Enabled = false;
+                buttonAnswer4.Enabled = false;
             }
 
             // show additional info about the topic / question / selected answer
