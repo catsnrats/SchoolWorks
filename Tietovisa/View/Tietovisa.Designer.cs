@@ -34,7 +34,6 @@ namespace Tietovisa
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tiedostoValikko = new System.Windows.Forms.ToolStripMenuItem();
-            this.tietojaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suljeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testaaTietokantayhteysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -60,26 +59,18 @@ namespace Tietovisa
             this.tiedostoValikko});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(975, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(975, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // tiedostoValikko
             // 
             this.tiedostoValikko.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tietojaToolStripMenuItem,
             this.suljeToolStripMenuItem,
             this.testaaTietokantayhteysToolStripMenuItem});
             this.tiedostoValikko.Name = "tiedostoValikko";
             this.tiedostoValikko.Size = new System.Drawing.Size(54, 29);
             this.tiedostoValikko.Text = "&File";
-            // 
-            // tietojaToolStripMenuItem
-            // 
-            this.tietojaToolStripMenuItem.Font = new System.Drawing.Font("Arial", 10.25F);
-            this.tietojaToolStripMenuItem.Name = "tietojaToolStripMenuItem";
-            this.tietojaToolStripMenuItem.Size = new System.Drawing.Size(352, 34);
-            this.tietojaToolStripMenuItem.Text = "&Info";
             // 
             // suljeToolStripMenuItem
             // 
@@ -230,7 +221,6 @@ namespace Tietovisa
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tiedostoValikko;
-        private System.Windows.Forms.ToolStripMenuItem tietojaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem suljeToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button buttonAnswer4;

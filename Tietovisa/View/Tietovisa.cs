@@ -105,7 +105,7 @@ namespace Tietovisa
                         return;
                     }
 
-                    // Draw a new set of 20 questions
+                    // Draw a new set of 10 questions
                     questions = allQuestions.OrderBy(q => random.Next()).Take(11).ToList();
                     score = 0; // Reset the score for the new game
                     labelQleft.Text = $"Questions left: {questions.Count}";
